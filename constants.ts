@@ -152,31 +152,161 @@ export const ALGERIAN_CURRICULUM: CurriculumStandard[] = [
       'يستنتج أهمية تكنولوجيا الإعلام والاتصال في الحياة اليومية'
     ]
   },
-  // ... (Keep existing informatics items) ...
   
-  // --- CIVIL ENGINEERING 1AS & 2AS (Existing) ---
+  // --- CIVIL ENGINEERING 1AS (Common Core Science & Technology) ---
+  // Domain: الجزء النظري (Theoretical Part)
   {
-    id: 'civ_1as_d1_u1',
-    code: 'CIV-1AS-D1-U1',
+    id: 'civ_1as_theory_u1',
+    code: 'CIV-1AS-TH-U1',
     cycle: 'secondary',
     subject: 'هندسة مدنية',
     level: '1AS',
     stream: 'جذع مشترك علوم وتكنولوجيا',
     domain: 'الجزء النظري',
     unit: 'اإلطالع على ميدان الهندسة المدنية',
-    lessonTitle: 'تعريف وتصنيف منشآت الهندسة المدنية',
-    suggestedDuration: 1,
+    lessonTitle: 'تعريف وتصنيف منشآت الهندسة المدنية واختيار الأرض',
+    suggestedDuration: 2,
     targetCompetencies: [
       'يتعرف على الهندسة المدنية ومكانتها',
       'يصنف مختلف منشآت الهندسة المدنية',
       'يتعرف على العوامل المختلفة لاختيار قطعة أرض للبناء'
     ],
     performanceIndicators: [
-      'يحدد مكانة الهندسة المدنية في الاقتصاد',
+      'يحدد مكانة الهندسة المدنية',
       'يصنف المنشآت انطلاقاً من صور (مباني، جسور، طرق...)',
-      'يقرأ مخطط الموقع ويستخرج المعلومات الأساسية'
+      'يلخص مراحل الحصول على قطعة أرض',
+      'يناقش العوامل: الموقع، نوعية التربة، التهيئة'
     ]
   },
+  {
+    id: 'civ_1as_theory_u2',
+    code: 'CIV-1AS-TH-U2',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '1AS',
+    stream: 'جذع مشترك علوم وتكنولوجيا',
+    domain: 'الجزء النظري',
+    unit: 'رخصة البناء',
+    lessonTitle: 'الملف الإداري والتقني لرخصة البناء',
+    suggestedDuration: 1,
+    targetCompetencies: [
+      'يتعرف على مختلف الوثائق المكونة لملف رخصة البناء',
+      'يدرك أهمية رخصة البناء وطريقة الحصول عليها'
+    ],
+    performanceIndicators: [
+      'يميز بين الوثائق المكتوبة (الطلب، الكشوف، العقد) والوثائق الخطية (المخططات)',
+      'يحدد دور المتدخلين (صاحب المشروع، مكتب الدراسات، البلدية)',
+      'ينجز مخططاً بيانيا لمراحل الحصول على الرخصة'
+    ]
+  },
+  {
+    id: 'civ_1as_theory_u3',
+    code: 'CIV-1AS-TH-U3',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '1AS',
+    stream: 'جذع مشترك علوم وتكنولوجيا',
+    domain: 'الجزء النظري',
+    unit: 'الرسم المدعم بالحاسوب',
+    lessonTitle: 'أساسيات البرنامج وتمثيل المحاور والأعمدة',
+    suggestedDuration: 2,
+    targetCompetencies: [
+      'يكتشف واجهة برنامج الرسم المدعم بالحاسوب',
+      'يستغل البرنامج لتمثيل العناصر البسيطة'
+    ],
+    performanceIndicators: [
+      'يشغل البرنامج ويفتح دورة عمل',
+      'يميز أشرطة الأدوات',
+      'يوظف أوامر الرسم والتغيير لتمثيل المحاور والأعمدة'
+    ]
+  },
+  {
+    id: 'civ_1as_theory_u4',
+    code: 'CIV-1AS-TH-U4',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '1AS',
+    stream: 'جذع مشترك علوم وتكنولوجيا',
+    domain: 'الجزء النظري',
+    unit: 'الرسم المدعم بالحاسوب',
+    lessonTitle: 'تمثيل الجدران والفتحات (أبواب ونوافذ)',
+    suggestedDuration: 2,
+    targetCompetencies: [
+      'يتعرف على الجدران وأنواعها',
+      'يتعرف على الفتحات وأدوارها',
+      'يستغل البرنامج لتمثيل الجدران والفتحات'
+    ],
+    performanceIndicators: [
+      'يستخلص أدوار الجدران (الرئيسية والثانوية)',
+      'يستخدم أوامر الرسم (Ligne, Arc) والتعديل لرسم الجدران والفتحات بدقة'
+    ]
+  },
+
+  // Domain: الجزء التطبيقي (Practical Part)
+  {
+    id: 'civ_1as_prac_u1',
+    code: 'CIV-1AS-PR-U1',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '1AS',
+    stream: 'جذع مشترك علوم وتكنولوجيا',
+    domain: 'الجزء التطبيقي',
+    unit: 'مخطط التوزيع',
+    lessonTitle: 'اقتراح مخطط توزيع واستغلال قطعة أرض',
+    suggestedDuration: 2,
+    targetCompetencies: [
+      'يستغل قطعة أرض للبناء',
+      'يقترح مخطط توزيع يحترم المعايير'
+    ],
+    performanceIndicators: [
+      'يقرأ مخطط الكتلة',
+      'يناقش مواصفات المشروع (الواجهات، المحيط)',
+      'يشرح ويبرر المخطط المقترح'
+    ]
+  },
+  {
+    id: 'civ_1as_prac_u2',
+    code: 'CIV-1AS-PR-U2',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '1AS',
+    stream: 'جذع مشترك علوم وتكنولوجيا',
+    domain: 'الجزء التطبيقي',
+    unit: 'مخطط التوزيع',
+    lessonTitle: 'رسم المحاور، الأعمدة والجدران (DAO)',
+    suggestedDuration: 4,
+    targetCompetencies: [
+      'يرسم المحاور والأعمدة والجدران بدقة باستعمال الحاسوب'
+    ],
+    performanceIndicators: [
+      'يستحدث منسوخات (Calques) بخصائص مختلفة (لون، سمك)',
+      'يطبق أوامر (Ligne, Polyligne, Décaler, Ajuster, Copier)',
+      'يستخدم تعليمة Accrochage للتدقيق'
+    ]
+  },
+  {
+    id: 'civ_1as_prac_u3',
+    code: 'CIV-1AS-PR-U3',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '1AS',
+    stream: 'جذع مشترك علوم وتكنولوجيا',
+    domain: 'الجزء التطبيقي',
+    unit: 'مخطط التوزيع',
+    lessonTitle: 'رسم الأبواب والنوافذ والإنهاء (DAO)',
+    suggestedDuration: 2,
+    targetCompetencies: [
+      'يكمل رسم المخطط بتمثيل الفتحات'
+    ],
+    performanceIndicators: [
+      'يستحدث منسوخ الفتحات',
+      'يرسم الرموز الاصطلاحية للأبواب والنوافذ',
+      'يحفظ ملف الرسم النهائي'
+    ]
+  },
+
+  // --- CIVIL ENGINEERING 2AS (Technical Math) ---
+  // Domain 1: البناء (Construction)
   {
     id: 'civ_2as_d1_u1',
     code: 'CIV-2AS-D1-U1',
@@ -200,7 +330,368 @@ export const ALGERIAN_CURRICULUM: CurriculumStandard[] = [
       'ينجز مخططاً حول كيفية تدخل مؤسسة البناء'
     ]
   },
-  // ... (Keep other 1AS and 2AS items) ...
+  {
+    id: 'civ_2as_d1_u2',
+    code: 'CIV-2AS-D1-U2',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '2AS',
+    stream: 'تقني رياضي',
+    domain: 'البناء',
+    unit: 'دراسة الأرضية',
+    lessonTitle: 'الجيولوجيا وميكانيك التربة',
+    suggestedDuration: 12,
+    targetCompetencies: [
+      'يصنف مختلف أنواع التربة',
+      'يتعرف على الخصائص الميكانيكية للتربة'
+    ],
+    performanceIndicators: [
+      'يشرح مبدأ تجارب تصنيف التربة (التحليل الحبيبي، حدود أتربارغ)',
+      'يحسب المحتوى المائي والعوامل الفيزيائية',
+      'يحدد أهمية الدراسة الجيوتقنية'
+    ]
+  },
+  {
+    id: 'civ_2as_d1_u3',
+    code: 'CIV-2AS-D1-U3',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '2AS',
+    stream: 'تقني رياضي',
+    domain: 'البناء',
+    unit: 'دراسة الأرضية',
+    lessonTitle: 'الطبوغرافيا والتجريفات',
+    suggestedDuration: 6,
+    targetCompetencies: [
+      'يتحكم في الحسابات الخاصة بالرفع والتوقيع',
+      'يدير عملية التجريفات'
+    ],
+    performanceIndicators: [
+      'يقرأ خريطة طبوغرافية',
+      'يميز بين عمليتي التوقيع والرفع',
+      'يربط بين عمليات التجريف (حفر، ردم) والعتاد المناسب',
+      'يحسب حجوم التجريفات'
+    ]
+  },
+  {
+    id: 'civ_2as_d1_u4',
+    code: 'CIV-2AS-D1-U4',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '2AS',
+    stream: 'تقني رياضي',
+    domain: 'البناء',
+    unit: 'مواد البناء',
+    lessonTitle: 'المواد المختلفة (خشب، فولاذ، لدائن)',
+    suggestedDuration: 6,
+    targetCompetencies: [
+      'يختار مختلف المواد حسب خصائصها ومجال استعمالها'
+    ],
+    performanceIndicators: [
+      'يميز بين المواد المتجانسة وغير المتجانسة',
+      'يبرر اختيار مادة معينة في مشروع بناء'
+    ]
+  },
+  {
+    id: 'civ_2as_d1_u5',
+    code: 'CIV-2AS-D1-U5',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '2AS',
+    stream: 'تقني رياضي',
+    domain: 'البناء',
+    unit: 'مواد البناء',
+    lessonTitle: 'الخرسانة والخرسانة المسلحة',
+    suggestedDuration: 6,
+    targetCompetencies: [
+      'يتعرف على مكونات الخرسانة',
+      'يفهم مبدأ الخرسانة المسلحة'
+    ],
+    performanceIndicators: [
+      'يحدد دور كل مكون (إسمنت، رمل، حصى، ماء)',
+      'يشرح أهمية الإضافات والتسليح',
+      'يحسب نسب مكونات الخرسانة (المعايرة)'
+    ]
+  },
+  {
+    id: 'civ_2as_d1_u6',
+    code: 'CIV-2AS-D1-U6',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '2AS',
+    stream: 'تقني رياضي',
+    domain: 'البناء',
+    unit: 'المنشآت السفلية',
+    lessonTitle: 'األساسات السطحية والعميقة',
+    suggestedDuration: 2,
+    targetCompetencies: [
+      'يدرس مختلف أنواع الأساسات',
+      'يختار نوع الأساس المناسب'
+    ],
+    performanceIndicators: [
+      'يصنف الأساسات (منعزلة، مستمرة، لبشة، أوتاد)',
+      'يحدد عوامل اختيار نوع الأساس'
+    ]
+  },
+  {
+    id: 'civ_2as_d1_u7',
+    code: 'CIV-2AS-D1-U7',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '2AS',
+    stream: 'تقني رياضي',
+    domain: 'البناء',
+    unit: 'المنشآت السفلية',
+    lessonTitle: 'جدران الاستناد والتطهير',
+    suggestedDuration: 12,
+    targetCompetencies: [
+      'يقترح حلول استناد (جدران)',
+      'يختار نوع شبكة التطهير المناسبة'
+    ],
+    performanceIndicators: [
+      'يميز مكونات جدار الاستناد',
+      'يقترح طرق التطهير (الصرف الصحي) في المدن والأرياف',
+      'يرسم مخطط تطهير بسيط'
+    ]
+  },
+
+  // Domain 2: ميكانيك مطبقة (Applied Mechanics)
+  {
+    id: 'civ_2as_d2_u1',
+    code: 'CIV-2AS-D2-U1',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '2AS',
+    stream: 'تقني رياضي',
+    domain: 'ميكانيك مطبقة',
+    unit: 'علم السكون',
+    lessonTitle: 'القوى والعزوم ومبدأ التوازن',
+    suggestedDuration: 24,
+    targetCompetencies: [
+      'يتعرف على المبادئ الأولية لعلم السكون',
+      'ينمذج التأثيرات الميكانيكية (قوى، عزوم)',
+      'يطبق نظرية فارينيون'
+    ],
+    performanceIndicators: [
+      'يحسب محصلة القوى تحليلياً',
+      'يحلل قوة إلى مركبتين',
+      'يحسب عزم قوة بالنسبة لنقطة',
+      'يطبق شروط التوازن'
+    ]
+  },
+  {
+    id: 'civ_2as_d2_u2',
+    code: 'CIV-2AS-D2-U2',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '2AS',
+    stream: 'تقني رياضي',
+    domain: 'ميكانيك مطبقة',
+    unit: 'علم السكون',
+    lessonTitle: 'المساند وردود الأفعال',
+    suggestedDuration: 14,
+    targetCompetencies: [
+      'ينمذج مختلف المساند',
+      'يحل إشكاليات في علم السكون (حساب الردود)'
+    ],
+    performanceIndicators: [
+      'يميز بين المسند البسيط، المزدوج، والمدمج',
+      'يطبق معادلات التوازن لحساب ردود الأفعال في الروافد المحددة سكونياً'
+    ]
+  },
+  {
+    id: 'civ_2as_d2_u3',
+    code: 'CIV-2AS-D2-U3',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '2AS',
+    stream: 'تقني رياضي',
+    domain: 'ميكانيك مطبقة',
+    unit: 'الخصائص الهندسية للمقاطع',
+    lessonTitle: 'مركز الثقل والعزم السكوني',
+    suggestedDuration: 4,
+    targetCompetencies: [
+      'يحدد إحداثيات مركز الثقل للمقاطع المستوية'
+    ],
+    performanceIndicators: [
+      'يحسب العزم السكوني لمقطع',
+      'يحدد مركز ثقل مقطع مركب (مملوء أو مجوف)'
+    ]
+  },
+  {
+    id: 'civ_2as_d2_u4',
+    code: 'CIV-2AS-D2-U4',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '2AS',
+    stream: 'تقني رياضي',
+    domain: 'ميكانيك مطبقة',
+    unit: 'الخصائص الهندسية للمقاطع',
+    lessonTitle: 'عزم العطالة ونظرية هويغنس',
+    suggestedDuration: 14,
+    targetCompetencies: [
+      'يستعمل نظرية هويغنس لحساب عزم العطالة'
+    ],
+    performanceIndicators: [
+      'يحسب عزم العطالة لمقاطع هندسية بسيطة',
+      'يطبق نظرية المحاور المتوازية (هويغنس) للمقاطع المركبة'
+    ]
+  },
+
+  // Domain 3: أعمال مؤطرة (Guided Works / TP)
+  {
+    id: 'civ_2as_d3_u1',
+    code: 'CIV-2AS-D3-U1',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '2AS',
+    stream: 'تقني رياضي',
+    domain: 'أعمال مؤطرة',
+    unit: 'معلومات حول الرسم المدعم بالحاسوب',
+    lessonTitle: 'استعمال برنامج DAO وقراءة المخططات',
+    suggestedDuration: 14,
+    targetCompetencies: [
+      'يستعمل برنامج الرسم المدعم بالحاسوب',
+      'يحلل ويقرأ مخططات معمارية'
+    ],
+    performanceIndicators: [
+      'يطبق أوامر الرسم والتعديل',
+      'يقرأ مخططات مشروع سكني'
+    ]
+  },
+  {
+    id: 'civ_2as_d3_u2',
+    code: 'CIV-2AS-D3-U2',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '2AS',
+    stream: 'تقني رياضي',
+    domain: 'أعمال مؤطرة',
+    unit: 'القوى',
+    lessonTitle: 'تطبيقات حول القوى والعزوم',
+    suggestedDuration: 4,
+    targetCompetencies: [
+      'يطبق نظرية فارينيون في تمارين'
+    ],
+    performanceIndicators: [
+      'يتحكم في تركيب وتحليل القوى عددياً وبيانياً'
+    ]
+  },
+  {
+    id: 'civ_2as_d3_u3',
+    code: 'CIV-2AS-D3-U3',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '2AS',
+    stream: 'تقني رياضي',
+    domain: 'أعمال مؤطرة',
+    unit: 'التجارب المخبرية',
+    lessonTitle: 'تجارب تصنيف التربة',
+    suggestedDuration: 6,
+    targetCompetencies: [
+      'يحلل نتائج عملية تجريبية'
+    ],
+    performanceIndicators: [
+      'ينجز أو يحاكي تجارب (التحليل الحبيبي، حدود أتربارغ)',
+      'يستثمر النتائج لتصنيف التربة'
+    ]
+  },
+  {
+    id: 'civ_2as_d3_u4',
+    code: 'CIV-2AS-D3-U4',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '2AS',
+    stream: 'تقني رياضي',
+    domain: 'أعمال مؤطرة',
+    unit: 'استعمال الأجهزة الطبوغرافية',
+    lessonTitle: 'تطبيقات الرفع الطبوغرافي',
+    suggestedDuration: 6,
+    targetCompetencies: [
+      'يطبق طرق الرفع باستعمال الجهاز'
+    ],
+    performanceIndicators: [
+      'يتحكم في وضع الجهاز على المحطة',
+      'يقرأ القياسات ويسجلها'
+    ]
+  },
+  {
+    id: 'civ_2as_d3_u5',
+    code: 'CIV-2AS-D3-U5',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '2AS',
+    stream: 'تقني رياضي',
+    domain: 'أعمال مؤطرة',
+    unit: 'التجريفات',
+    lessonTitle: 'تقييم أعمال التجريفات',
+    suggestedDuration: 8,
+    targetCompetencies: [
+      'يقيم أعمال التجريفات (حساب الكلفة)',
+      'يستعمل المجدول في الحسابات'
+    ],
+    performanceIndicators: [
+      'يحسب حجوم التربة مع مراعاة الانتفاش والارتصاص',
+      'ينجز كشفاً كمياً وسعرياً للتجريفات'
+    ]
+  },
+  {
+    id: 'civ_2as_d3_u6',
+    code: 'CIV-2AS-D3-U6',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '2AS',
+    stream: 'تقني رياضي',
+    domain: 'أعمال مؤطرة',
+    unit: 'الخصائص الهندسية',
+    lessonTitle: 'تطبيقات حول الخصائص الهندسية و DAO',
+    suggestedDuration: 6,
+    targetCompetencies: [
+      'يحدد الخصائص الهندسية للمقاطع المستوية',
+      'يتحقق من النتائج باستعمال برمجية DAO'
+    ],
+    performanceIndicators: [
+      'يتقن حساب مركز الثقل وعزم العطالة',
+      'يوظف البرمجية للتحقق من صحة النتائج'
+    ]
+  },
+  {
+    id: 'civ_2as_d3_u7',
+    code: 'CIV-2AS-D3-U7',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '2AS',
+    stream: 'تقني رياضي',
+    domain: 'أعمال مؤطرة',
+    unit: 'الأساسات السطحية',
+    lessonTitle: 'رسم مخطط قولبة الأساسات (DAO)',
+    suggestedDuration: 8,
+    targetCompetencies: [
+      'يتحكم في الأوامر اللازمة لإنشاء مخطط قولبة'
+    ],
+    performanceIndicators: [
+      'يقرأ مخططات قولبة الأساسات',
+      'يرسم مخطط قولبة أساسات منعزلة باستخدام الحاسوب'
+    ]
+  },
+  {
+    id: 'civ_2as_d3_u8',
+    code: 'CIV-2AS-D3-U8',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '2AS',
+    stream: 'تقني رياضي',
+    domain: 'أعمال مؤطرة',
+    unit: 'الفعل ورد الفعل',
+    lessonTitle: 'تطبيقات حول التوازن',
+    suggestedDuration: 4,
+    targetCompetencies: [
+      'يطبق معادلات التوازن'
+    ],
+    performanceIndicators: [
+      'يحسب ردود الأفعال بدقة'
+    ]
+  },
 
   // --- CIVIL ENGINEERING 3AS (Technical Math) ---
   
