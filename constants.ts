@@ -79,8 +79,21 @@ export const SUBJECT_FEATURES: Record<string, SubjectFeatures> = {
   'فيزياء': { hasLab: true, hasProjects: true, defaultDuration: 60, customFields: [] },
   'علوم طبيعية': { hasLab: true, hasProjects: true, defaultDuration: 60, customFields: [] },
   'تكنولوجيا': { hasLab: true, hasProjects: true, defaultDuration: 60, customFields: [] },
-  'هندسة مدنية': { hasLab: true, hasProjects: true, defaultDuration: 60, customFields: [] }, // Added Lab support for Civil Eng (DAO)
-  'لغة إنجليزية': { hasLab: false, hasProjects: true, defaultDuration: 60, customFields: [] },
+  'هندسة مدنية': { hasLab: true, hasProjects: true, defaultDuration: 60, customFields: [] },
+  'لغة إنجليزية': { 
+      hasLab: false, 
+      hasProjects: true, 
+      defaultDuration: 60, 
+      customFields: [],
+      skillsModule: 'Listening, Speaking, Reading, Writing'
+  },
+  'لغة عربية': { 
+      hasLab: false, 
+      hasProjects: true, 
+      defaultDuration: 60, 
+      customFields: [],
+      skillsModule: 'نص أدبي, نص تواصلي, قواعد, بالغة/عروض, تعبير'
+  },
 };
 
 // --- MOCK DATA ---
@@ -93,9 +106,9 @@ export const DEMO_USER: User = {
   schoolName: 'ثانوية الرياضيات بالقبة',
   academicYear: '2023/2024',
   educationStage: 'HIGH',
-  subjects: ['هندسة مدنية', 'معلوماتية'],
+  subjects: ['لغة إنجليزية', 'هندسة مدنية', 'معلوماتية', 'لغة عربية'],
   levels: ['1AS', '2AS', '3AS'],
-  assignedClassIds: ['c1_1', 'c2_3', 'c3_3'],
+  assignedClassIds: ['c1_1', 'c2_3', 'c3_3', 'c1_5'],
   notificationSettings: {
     homeworkReminder: '1_day',
     classReminder: '15_min',
@@ -127,6 +140,1351 @@ export const getInitialUser = (): User | null => {
 
 // --- OFFICIAL ALGERIAN CURRICULUM DATA ---
 export const ALGERIAN_CURRICULUM: CurriculumStandard[] = [
+  
+  // ==========================================
+  // 1. ARABIC 1AS (Common Core)
+  // ==========================================
+  {
+    id: 'arb_1as_lit_u1',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '1AS',
+    stream: 'جذع مشترك آداب',
+    domain: 'العصر الجاهلي',
+    unit: 'الصلح والسلم',
+    lessonTitle: 'نص أدبي: الإشادة بالصلح والسلم (زهير بن أبي سلمى)',
+    suggestedDuration: 2,
+    targetCompetencies: ['تعرف الشعر الجاهلي', 'الوقوف على قيم السلم', 'بناء القصيدة الجاهلية']
+  },
+  {
+    id: 'arb_1as_lit_u2',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '1AS',
+    stream: 'جذع مشترك آداب',
+    domain: 'العصر الجاهلي',
+    unit: 'الفروسية',
+    lessonTitle: 'نص أدبي: الفروسية (عنترة بن شداد)',
+    suggestedDuration: 2,
+    targetCompetencies: ['شعر الحماسة والفروسية', 'القيم الخلقية في الجاهلية']
+  },
+  {
+    id: 'arb_1as_sci_u1',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '1AS',
+    stream: 'جذع مشترك علوم وتكنولوجيا',
+    domain: 'العصر الجاهلي',
+    unit: 'الكرم العربي',
+    lessonTitle: 'نص أدبي: من الكرم العربي (حاتم الطائي)',
+    suggestedDuration: 2,
+    targetCompetencies: ['مظاهر الكرم العربي', 'النمط السردي والوصفي']
+  },
+  {
+    id: 'arb_1as_sci_u2',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '1AS',
+    stream: 'جذع مشترك علوم وتكنولوجيا',
+    domain: 'عصر صدر الإسلام',
+    unit: 'القيم الروحية والاجتماعية',
+    lessonTitle: 'نص أدبي: من هدي القرآن الكريم',
+    suggestedDuration: 2,
+    targetCompetencies: ['أثر الإسلام في اللغة والأدب', 'اقتباس القرآن']
+  },
+
+  // ==========================================
+  // 2. ARABIC 2AS (Arts & Science)
+  // ==========================================
+  {
+    id: 'arb_2as_lit_u1_1',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '2AS',
+    stream: 'آداب وفلسفة',
+    domain: 'العصر العباسي الأول',
+    unit: 'النزعة العقلية',
+    lessonTitle: 'نص أدبي: تهديد ونصح (بشار بن برد)',
+    suggestedDuration: 2,
+    targetCompetencies: ['مظاهر النزعة العقلية', 'الشعوبية', 'بحر الخفيف']
+  },
+  {
+    id: 'arb_2as_lit_u1_2',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '2AS',
+    stream: 'آداب وفلسفة',
+    domain: 'العصر العباسي الأول',
+    unit: 'وصف الطبيعة',
+    lessonTitle: 'نص أدبي: وصف النخل (أبو نواس)',
+    suggestedDuration: 2,
+    targetCompetencies: ['التجديد في الوصف', 'الخصومة بين القدماء والمحدثين']
+  },
+  {
+    id: 'arb_2as_lit_u3',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '2AS',
+    stream: 'آداب وفلسفة',
+    domain: 'العصر العباسي الثاني',
+    unit: 'الحكمة وفلسفة الحياة',
+    lessonTitle: 'نص أدبي: حكمة المتنبي',
+    suggestedDuration: 2,
+    targetCompetencies: ['شعر الحكمة', 'شخصية المتنبي']
+  },
+  {
+    id: 'arb_2as_lit_u4',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '2AS',
+    stream: 'آداب وفلسفة',
+    domain: 'الأدب الأندلسي',
+    unit: 'رثاء الممالك',
+    lessonTitle: 'نص أدبي: رثاء الأندلس (أبو البقاء الرندي)',
+    suggestedDuration: 2,
+    targetCompetencies: ['شعر الرثاء', 'نكبة الأندلس']
+  },
+  {
+    id: 'arb_2as_sci_u1_1',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '2AS',
+    stream: 'علوم تجريبية',
+    domain: 'العصر العباسي الأول',
+    unit: 'النزعة العقلية',
+    lessonTitle: 'نص أدبي: زحف عربي ظافر (أبو تمام)',
+    suggestedDuration: 2,
+    targetCompetencies: ['شعر الفتوحات', 'توظيف البديع']
+  },
+  {
+    id: 'arb_2as_sci_u2',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '2AS',
+    stream: 'علوم تجريبية',
+    domain: 'العصر العباسي',
+    unit: 'النثر العلمي',
+    lessonTitle: 'نص أدبي: في البصريات (ابن الهيثم)',
+    suggestedDuration: 2,
+    targetCompetencies: ['خصائص النثر العلمي', 'المصطلحات العلمية']
+  },
+
+  // ==========================================
+  // 3. ARABIC 3AS (Arts, Philo, Languages)
+  // ==========================================
+  {
+    id: 'arb_3as_lit_u1_1',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '3AS',
+    stream: 'آداب وفلسفة',
+    domain: 'عصر الضعف',
+    unit: 'شعر الزهد والمديح',
+    lessonTitle: 'نص أدبي: في مدح الرسول (البوصيري)',
+    suggestedDuration: 2,
+    targetCompetencies: ['خصائص المديح النبوي', 'بديعيات البوصيري', 'الإعراب اللفظي']
+  },
+  {
+    id: 'arb_3as_lit_u1_2',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '3AS',
+    stream: 'آداب وفلسفة',
+    domain: 'عصر الضعف',
+    unit: 'شعر الزهد والمديح',
+    lessonTitle: 'قواعد: الإعراب اللفظي',
+    suggestedDuration: 1,
+    targetCompetencies: ['أحكام التعذر والثقل']
+  },
+  {
+    id: 'arb_3as_lit_u1_3',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '3AS',
+    stream: 'آداب وفلسفة',
+    domain: 'عصر الضعف',
+    unit: 'شعر الزهد والمديح',
+    lessonTitle: 'نص أدبي: في الزهد (ابن نباتة)',
+    suggestedDuration: 2,
+    targetCompetencies: ['شعر الزهد', 'ظاهرة التضمين']
+  },
+  {
+    id: 'arb_3as_lit_u1_4',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '3AS',
+    stream: 'آداب وفلسفة',
+    domain: 'عصر الضعف',
+    unit: 'النثر العلمي المتأدب',
+    lessonTitle: 'نص أدبي: علم التاريخ (ابن خلدون)',
+    suggestedDuration: 2,
+    targetCompetencies: ['خصائص النثر العلمي', 'أسلوب ابن خلدون', 'الإعراب التقديري']
+  },
+  {
+    id: 'arb_3as_lit_u2_1',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '3AS',
+    stream: 'آداب وفلسفة',
+    domain: 'العصر الحديث',
+    unit: 'شعر المنفى',
+    lessonTitle: 'نص أدبي: آلام الاغتراب (البارودي)',
+    suggestedDuration: 2,
+    targetCompetencies: ['مدرسة الإحياء والبعث', 'شعر الحنين', 'بلاغة المجاز']
+  },
+  {
+    id: 'arb_3as_lit_u2_2',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '3AS',
+    stream: 'آداب وفلسفة',
+    domain: 'العصر الحديث',
+    unit: 'شعر المنفى',
+    lessonTitle: 'نص أدبي: من وحي المنفى (أحمد شوقي)',
+    suggestedDuration: 2,
+    targetCompetencies: ['الكلاسيكية الجديدة', 'التجديد في التقليد']
+  },
+  {
+    id: 'arb_3as_lit_u2_3',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '3AS',
+    stream: 'آداب وفلسفة',
+    domain: 'العصر الحديث',
+    unit: 'النزعة الإنسانية',
+    lessonTitle: 'نص أدبي: أنا (إيليا أبو ماضي)',
+    suggestedDuration: 2,
+    targetCompetencies: ['الأدب المهجري', 'الرومانسية', 'إذ، إذا، إذًا، حينئذ']
+  },
+  {
+    id: 'arb_3as_lit_u2_4',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '3AS',
+    stream: 'آداب وفلسفة',
+    domain: 'العصر الحديث',
+    unit: 'الالتزام والقضايا القومية',
+    lessonTitle: 'نص أدبي: منشورات فدائية (نزار قباني)',
+    suggestedDuration: 2,
+    targetCompetencies: ['شعر التفعيلة', 'الالتزام', 'الجمل التي لا محل لها من الإعراب']
+  },
+  {
+    id: 'arb_3as_lit_u2_5',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '3AS',
+    stream: 'آداب وفلسفة',
+    domain: 'العصر الحديث',
+    unit: 'الثورة الجزائرية',
+    lessonTitle: 'نص أدبي: الإنسان الكبير (محمد صالح باوية)',
+    suggestedDuration: 2,
+    targetCompetencies: ['الثورة في الشعر العربي', 'الرمز', 'المسند والمسند إليه']
+  },
+  {
+    id: 'arb_3as_lit_u2_6',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '3AS',
+    stream: 'آداب وفلسفة',
+    domain: 'العصر الحديث',
+    unit: 'ظاهرة الحزن والألم',
+    lessonTitle: 'نص أدبي: أغنيات للألم (نازك الملائكة)',
+    suggestedDuration: 2,
+    targetCompetencies: ['الشعر المعاصر', 'الرمز والأسطورة', 'جموع القلة']
+  },
+  {
+    id: 'arb_3as_lit_u3_1',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '3AS',
+    stream: 'آداب وفلسفة',
+    domain: 'الفنون النثرية الحديثة',
+    unit: 'المقال',
+    lessonTitle: 'نص أدبي: منزلة المثقفين (البشير الإبراهيمي)',
+    suggestedDuration: 2,
+    targetCompetencies: ['فن المقال', 'مدرسة الصنعة اللفظية', 'لو، لولا، لوما']
+  },
+  {
+    id: 'arb_3as_lit_u3_2',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '3AS',
+    stream: 'آداب وفلسفة',
+    domain: 'الفنون النثرية الحديثة',
+    unit: 'المقال النقدي',
+    lessonTitle: 'نص أدبي: الصراع بين التقليد والتجديد (طه حسين)',
+    suggestedDuration: 2,
+    targetCompetencies: ['النقد الأدبي', 'طه حسين', 'أمّا، إمّا']
+  },
+  {
+    id: 'arb_3as_lit_u3_3',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '3AS',
+    stream: 'آداب وفلسفة',
+    domain: 'الفنون النثرية الحديثة',
+    unit: 'القصة القصيرة',
+    lessonTitle: 'نص أدبي: الطريق إلى قرية الطوب (محمد شنوفي)',
+    suggestedDuration: 2,
+    targetCompetencies: ['القصة الجزائرية', 'عناصر السرد', 'اسم الجمع']
+  },
+  {
+    id: 'arb_3as_lit_u3_4',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '3AS',
+    stream: 'آداب وفلسفة',
+    domain: 'الفنون النثرية الحديثة',
+    unit: 'المسرح',
+    lessonTitle: 'نص أدبي: شهرزاد (توفيق الحكيم)',
+    suggestedDuration: 2,
+    targetCompetencies: ['أبو المسرح العربي', 'الصراع الدرامي', 'أي، أيّ، كم، كأيّن']
+  },
+
+  // ==========================================
+  // 4. ARABIC 3AS (Scientific Streams)
+  // ==========================================
+  {
+    id: 'arb_3as_sci_u1_1',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '3AS',
+    stream: 'علوم تجريبية',
+    domain: 'عصر الضعف',
+    unit: 'الشعر التعليمي',
+    lessonTitle: 'نص أدبي: وصايا وتوجيهات (ابن الوردي)',
+    suggestedDuration: 2,
+    targetCompetencies: ['الشعر التعليمي', 'النصح والإرشاد', 'المجاز العقلي والمرسل']
+  },
+  {
+    id: 'arb_3as_sci_u1_2',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '3AS',
+    stream: 'علوم تجريبية',
+    domain: 'عصر الضعف',
+    unit: 'النثر العلمي',
+    lessonTitle: 'نص أدبي: علم التاريخ (ابن خلدون)',
+    suggestedDuration: 2,
+    targetCompetencies: ['الموضوعية العلمية', 'المصطلحات', 'الإعراب اللفظي والتقديري']
+  },
+  {
+    id: 'arb_3as_sci_u2_1',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '3AS',
+    stream: 'علوم تجريبية',
+    domain: 'العصر الحديث',
+    unit: 'شعر المنفى',
+    lessonTitle: 'نص أدبي: من وحي المنفى (أحمد شوقي)',
+    suggestedDuration: 2,
+    targetCompetencies: ['الكلاسيكية', 'الحنين للوطن', 'المعارضات']
+  },
+  {
+    id: 'arb_3as_sci_u2_2',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '3AS',
+    stream: 'علوم تجريبية',
+    domain: 'العصر الحديث',
+    unit: 'النزعة الإنسانية',
+    lessonTitle: 'نص أدبي: أنا (إيليا أبو ماضي)',
+    suggestedDuration: 2,
+    targetCompetencies: ['مدرسة الرابطة القلمية', 'التفاؤل', 'إذ، إذا']
+  },
+  {
+    id: 'arb_3as_sci_u2_3',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '3AS',
+    stream: 'علوم تجريبية',
+    domain: 'العصر الحديث',
+    unit: 'القضية الفلسطينية',
+    lessonTitle: 'نص أدبي: حالة حصار (محمود درويش)',
+    suggestedDuration: 2,
+    targetCompetencies: ['أدب المقاومة', 'الرمزية', 'الجمل التي لا محل لها من الإعراب']
+  },
+  {
+    id: 'arb_3as_sci_u2_4',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '3AS',
+    stream: 'علوم تجريبية',
+    domain: 'العصر الحديث',
+    unit: 'الثورة الجزائرية',
+    lessonTitle: 'نص أدبي: جميلة (شفيق الكمالي)',
+    suggestedDuration: 2,
+    targetCompetencies: ['القيم الثورية', 'الالتزام', 'الحال والتمييز']
+  },
+  {
+    id: 'arb_3as_sci_u2_5',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '3AS',
+    stream: 'علوم تجريبية',
+    domain: 'العصر الحديث',
+    unit: 'الشعر الاجتماعي',
+    lessonTitle: 'نص أدبي: الفراغ (أدونيس)',
+    suggestedDuration: 2,
+    targetCompetencies: ['الواقعية', 'الغموض الفني', 'البدل وعطف البيان']
+  },
+  {
+    id: 'arb_3as_sci_u3_1',
+    cycle: 'secondary',
+    subject: 'لغة عربية',
+    level: '3AS',
+    stream: 'علوم تجريبية',
+    domain: 'الفنون النثرية',
+    unit: 'المقال',
+    lessonTitle: 'نص أدبي: منزلة المثقفين (البشير الإبراهيمي)',
+    suggestedDuration: 2,
+    targetCompetencies: ['جمعية العلماء', 'السجع والبديع', 'لو، لولا، لوما']
+  },
+
+  // ... (English 1AS content kept as is) ...
+  {
+    id: 'eng_1as_lit_u1_1',
+    code: 'ENG-1AS-LIT-U1-L1',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '1AS',
+    stream: 'جذع مشترك آداب',
+    domain: 'Intercultural Exchanges',
+    unit: 'Getting Through',
+    lessonTitle: 'Communicate: Email & Invitations',
+    suggestedDuration: 4,
+    targetCompetencies: [
+      'Interact: Write emails/letters of invitation, refusal, acceptance',
+      'Interpret: Read and understand informal letters',
+      'Grammar: The imperative, Modals (need to, have to)'
+    ],
+    performanceIndicators: [
+      'Learner can distinguish between formal and informal letters',
+      'Learner can write short notes to invite and reply'
+    ]
+  },
+  {
+    id: 'eng_1as_lit_u1_2',
+    code: 'ENG-1AS-LIT-U1-L2',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '1AS',
+    stream: 'جذع مشترك آداب',
+    domain: 'Intercultural Exchanges',
+    unit: 'Getting Through',
+    lessonTitle: 'Language Focus: Technology & Devices',
+    suggestedDuration: 3,
+    targetCompetencies: [
+      'Interact: Name main parts of a computer',
+      'Grammar: Sequencers (first, next...), Frequency adverbs',
+      'Producing: Ordering instructions'
+    ],
+    performanceIndicators: [
+      'Learner can label computer parts',
+      'Learner can write a process paragraph using sequencers'
+    ]
+  },
+  {
+    id: 'eng_1as_lit_u1_3',
+    code: 'ENG-1AS-LIT-U1-L3',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '1AS',
+    stream: 'جذع مشترك آداب',
+    domain: 'Intercultural Exchanges',
+    unit: 'Getting Through',
+    lessonTitle: 'Writing: Job Application & CV',
+    suggestedDuration: 5,
+    targetCompetencies: [
+      'Producing: Fill in a résumé (CV)',
+      'Producing: Write an application letter',
+      'Grammar: Prepositions of time and place (in, on, at)'
+    ],
+    performanceIndicators: [
+      'Learner creates a job application booklet',
+      'Learner produces a correct formal letter'
+    ]
+  },
+  {
+    id: 'eng_1as_lit_u2_1',
+    code: 'ENG-1AS-LIT-U2-L1',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '1AS',
+    stream: 'جذع مشترك آداب',
+    domain: 'Communication & The Press',
+    unit: 'Our Findings Show',
+    lessonTitle: 'Reporting: Surveys & Interview',
+    suggestedDuration: 6,
+    targetCompetencies: [
+      'Interacting: Conduct surveys and interviews',
+      'Grammar: Direct & Indirect speech, Reporting verbs',
+      'Interpreting: Read reports and newspaper articles'
+    ],
+    performanceIndicators: [
+      'Learner can transform statements to reported speech',
+      'Learner can analyze a graph or survey result'
+    ]
+  },
+  {
+    id: 'eng_1as_lit_u2_2',
+    code: 'ENG-1AS-LIT-U2-L2',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '1AS',
+    stream: 'جذع مشترك آداب',
+    domain: 'Communication & The Press',
+    unit: 'Our Findings Show',
+    lessonTitle: 'Language Focus: Expressing Preference & Advice',
+    suggestedDuration: 4,
+    targetCompetencies: [
+      'Producing: Express point of view',
+      'Grammar: Quotation marks, Adverbs of manner (politely, fast)',
+      'Grammar: Silent letters, Stress in compound words'
+    ]
+  },
+  {
+    id: 'eng_1as_lit_u3_1',
+    code: 'ENG-1AS-LIT-U3-L1',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '1AS',
+    stream: 'جذع مشترك آداب',
+    domain: 'Environment & Pollution',
+    unit: 'Back to Nature',
+    lessonTitle: 'Climate Change & Pollution',
+    suggestedDuration: 6,
+    targetCompetencies: [
+      'Interacting: Speak about pollution and global warming',
+      'Grammar: Conditional types 0, 1, 2',
+      'Grammar: Expressing cause/effect (as a result, consequently)'
+    ]
+  },
+  {
+    id: 'eng_1as_lit_u3_2',
+    code: 'ENG-1AS-LIT-U3-L2',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '1AS',
+    stream: 'جذع مشترك آداب',
+    domain: 'Environment & Pollution',
+    unit: 'Back to Nature',
+    lessonTitle: 'Writing: Consumer Guide / Letter of Complaint',
+    suggestedDuration: 5,
+    targetCompetencies: [
+      'Producing: Write a letter of complaint',
+      'Producing: Design a consumer guide',
+      'Grammar: Link words, Polite requests'
+    ]
+  },
+  {
+    id: 'eng_1as_lit_u4_1',
+    code: 'ENG-1AS-LIT-U4-L1',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '1AS',
+    stream: 'جذع مشترك آداب',
+    domain: 'Innovation & Technology',
+    unit: 'Eureka',
+    lessonTitle: 'Inventions & Discoveries',
+    suggestedDuration: 5,
+    targetCompetencies: [
+      'Interacting: Describe objects (shape, dimensions)',
+      'Grammar: The Passive Voice (implied context), Used to',
+      'Grammar: Expressing concession (however, although)'
+    ]
+  },
+  {
+    id: 'eng_1as_lit_u5_1',
+    code: 'ENG-1AS-LIT-U5-L1',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '1AS',
+    stream: 'جذع مشترك آداب',
+    domain: 'Famous People',
+    unit: 'Once Upon a Time',
+    lessonTitle: 'Narrative: Biography & Tales',
+    suggestedDuration: 8,
+    targetCompetencies: [
+      'Interpreting: Read literary portraits and tales',
+      'Grammar: Past Simple vs Past Continuous (when, while)',
+      'Grammar: Relative pronouns (who, whom, which)'
+    ]
+  },
+
+  // ==========================================
+  // ENGLISH 1AS (Scientific Stream - جذع مشترك علوم)
+  // ==========================================
+  {
+    id: 'eng_1as_sci_u1_1',
+    code: 'ENG-1AS-SCI-U1-L1',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '1AS',
+    stream: 'جذع مشترك علوم وتكنولوجيا',
+    domain: 'Intercultural Exchanges',
+    unit: 'Getting Through',
+    lessonTitle: 'Communication Basics & Email',
+    suggestedDuration: 5,
+    targetCompetencies: [
+      'Interact: Write emails and letters',
+      'Grammar: Modals, Imperative, Prepositions',
+      'Project: Making a job application booklet'
+    ],
+    performanceIndicators: [
+      'Learner can write an inquiry letter'
+    ]
+  },
+  {
+    id: 'eng_1as_sci_u1_2',
+    code: 'ENG-1AS-SCI-U1-L2',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '1AS',
+    stream: 'جذع مشترك علوم وتكنولوجيا',
+    domain: 'Intercultural Exchanges',
+    unit: 'Getting Through',
+    lessonTitle: 'Computing & Processes',
+    suggestedDuration: 4,
+    targetCompetencies: [
+      'Producing: Describe a process (Sequencers)',
+      'Lexis: Computer related words'
+    ]
+  },
+  {
+    id: 'eng_1as_sci_u2_1',
+    code: 'ENG-1AS-SCI-U2-L1',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '1AS',
+    stream: 'جذع مشترك علوم وتكنولوجيا',
+    domain: 'Communication & The Press',
+    unit: 'Our Findings Show',
+    lessonTitle: 'Reporting & Surveying',
+    suggestedDuration: 6,
+    targetCompetencies: [
+      'Interacting: Conduct a survey',
+      'Grammar: Reported Speech (Statements/Questions)',
+      'Producing: Write a report based on a graph'
+    ]
+  },
+  {
+    id: 'eng_1as_sci_u3_1',
+    code: 'ENG-1AS-SCI-U3-L1',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '1AS',
+    stream: 'جذع مشترك علوم وتكنولوجيا',
+    domain: 'Environment & Pollution',
+    unit: 'Back to Nature',
+    lessonTitle: 'Environmental Issues',
+    suggestedDuration: 7,
+    targetCompetencies: [
+      'Interpreting: Understand pollution causes/effects',
+      'Grammar: Conditional Type 1 & 2',
+      'Grammar: Expressing cause and effect'
+    ]
+  },
+  {
+    id: 'eng_1as_sci_u4_1',
+    code: 'ENG-1AS-SCI-U4-L1',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '1AS',
+    stream: 'جذع مشترك علوم وتكنولوجيا',
+    domain: 'Innovation & Technology',
+    unit: 'Eureka',
+    lessonTitle: 'Invention & Tech Profile',
+    suggestedDuration: 7,
+    targetCompetencies: [
+      'Producing: Making an invention profile',
+      'Grammar: Concession, Dimensions, Definite Article',
+      'Project: Biography of a scientist'
+    ]
+  },
+
+  // ==========================================
+  // ENGLISH 2AS (Scientific / Maths / Technical)
+  // ==========================================
+  {
+    id: 'eng_2as_sci_u1_1',
+    code: 'ENG-2AS-SCI-U1-L1',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '2AS',
+    stream: 'علوم تجريبية',
+    domain: 'Peace and Conflict Resolution',
+    unit: 'Make Peace',
+    lessonTitle: 'Discovering Language: Conflict & Peace',
+    suggestedDuration: 7,
+    targetCompetencies: [
+      'Define conflict and types of conflicts',
+      'Express obligation and prohibition (Must/Have to)',
+      'Grammar: Ability (Can/Could/Able to)',
+      'Lexis: Peace, Rights, Duties'
+    ]
+  },
+  {
+    id: 'eng_2as_sci_u1_2',
+    code: 'ENG-2AS-SCI-U1-L2',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '2AS',
+    stream: 'علوم تجريبية',
+    domain: 'Peace and Conflict Resolution',
+    unit: 'Make Peace',
+    lessonTitle: 'Developing Skills: Writing a Statement/Charter',
+    suggestedDuration: 7,
+    targetCompetencies: [
+      'Write a poem denouncing prejudice',
+      'Analyze a charter (form and context)',
+      'Expressing appreciation and deduction',
+      'Project: Statement of achievements (Nobel Peace Prize)'
+    ]
+  },
+  {
+    id: 'eng_2as_sci_u1_3',
+    code: 'ENG-2AS-SCI-U1-L3',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '2AS',
+    stream: 'علوم تجريبية',
+    domain: 'Peace and Conflict Resolution',
+    unit: 'Make Peace',
+    lessonTitle: 'Project Workshop: Nobel Peace Prize',
+    suggestedDuration: 7,
+    targetCompetencies: [
+      'Researching famous peace makers',
+      'Writing biographies',
+      'Class presentation'
+    ]
+  },
+  {
+    id: 'eng_2as_sci_u2_1',
+    code: 'ENG-2AS-SCI-U2-L1',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '2AS',
+    stream: 'علوم تجريبية',
+    domain: 'Poverty and World Resources',
+    unit: 'Waste not, Want not',
+    lessonTitle: 'Discovering Language: Energy & Resources',
+    suggestedDuration: 7,
+    targetCompetencies: [
+      'Identify natural resources',
+      'Grammar: Passive voice (Modals)',
+      'Grammar: Future Perfect (will have done)',
+      'Lexis: Energy, Poverty, Sustainability'
+    ]
+  },
+  {
+    id: 'eng_2as_sci_u2_2',
+    code: 'ENG-2AS-SCI-U2-L2',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '2AS',
+    stream: 'علوم تجريبية',
+    domain: 'Poverty and World Resources',
+    unit: 'Waste not, Want not',
+    lessonTitle: 'Developing Skills: Sustainable Development',
+    suggestedDuration: 7,
+    targetCompetencies: [
+      'Write a press release about conservation',
+      'Expressing cause and effect',
+      'Grammar: Intonation in complex sentences',
+      'Project: Charter against poverty'
+    ]
+  },
+  {
+    id: 'eng_2as_sci_u3_1',
+    code: 'ENG-2AS-SCI-U3-L1',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '2AS',
+    stream: 'علوم تجريبية',
+    domain: 'Technology and Innovation',
+    unit: 'Budding Scientist',
+    lessonTitle: 'Scientific Experiments & Reporting',
+    suggestedDuration: 10,
+    targetCompetencies: [
+      'Discuss scientific discoveries',
+      'Grammar: Conditionals Type 0 & 1',
+      'Grammar: Stress in words ending in -gy, -ical',
+      'Project: Report on a scientific experiment'
+    ]
+  },
+  {
+    id: 'eng_2as_sci_u4_1',
+    code: 'ENG-2AS-SCI-U4-L1',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '2AS',
+    stream: 'علوم تجريبية',
+    domain: 'Disasters and Safety',
+    unit: 'No Man is an Island',
+    lessonTitle: 'Safety Measures & Disasters',
+    suggestedDuration: 11,
+    targetCompetencies: [
+      'List types of disasters',
+      'Grammar: Reported Speech (Statements/Questions)',
+      'Grammar: Had better / Ought to',
+      'Write a public announcement on safety'
+    ]
+  },
+
+  // ==========================================
+  // ENGLISH 2AS (Economy - تسيير واقتصاد)
+  // ==========================================
+  // Re-uses Units 1, 2, 3 from Science but replaces Unit 4
+  {
+    id: 'eng_2as_eco_u1',
+    code: 'ENG-2AS-ECO-U1',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '2AS',
+    stream: 'تسيير واقتصاد',
+    domain: 'Peace and Conflict Resolution',
+    unit: 'Make Peace',
+    lessonTitle: 'Peace & Conflict (See Science Stream)',
+    suggestedDuration: 21,
+    targetCompetencies: ['Identical to Science Stream']
+  },
+  {
+    id: 'eng_2as_eco_u2',
+    code: 'ENG-2AS-ECO-U2',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '2AS',
+    stream: 'تسيير واقتصاد',
+    domain: 'Poverty and World Resources',
+    unit: 'Waste not, Want not',
+    lessonTitle: 'Poverty & Resources (See Science Stream)',
+    suggestedDuration: 21,
+    targetCompetencies: ['Identical to Science Stream']
+  },
+  {
+    id: 'eng_2as_eco_u3',
+    code: 'ENG-2AS-ECO-U3',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '2AS',
+    stream: 'تسيير واقتصاد',
+    domain: 'Technology and Innovation',
+    unit: 'Budding Scientist',
+    lessonTitle: 'Technology (See Science Stream)',
+    suggestedDuration: 21,
+    targetCompetencies: ['Identical to Science Stream']
+  },
+  {
+    id: 'eng_2as_eco_u4_1',
+    code: 'ENG-2AS-ECO-U4-L1',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '2AS',
+    stream: 'تسيير واقتصاد',
+    domain: 'Management and Efficiency',
+    unit: 'Business is Business',
+    lessonTitle: 'Management Forms & Business Writing',
+    suggestedDuration: 10,
+    targetCompetencies: [
+      'Define efficiency in business',
+      'Write a business report / annual report',
+      'Grammar: Present Perfect, Passive Voice',
+      'Lexis: Management, Marketing, Business',
+      'Project: Profile of a good manager'
+    ]
+  },
+  {
+    id: 'eng_2as_eco_u4_2',
+    code: 'ENG-2AS-ECO-U4-L2',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '2AS',
+    stream: 'تسيير واقتصاد',
+    domain: 'Management and Efficiency',
+    unit: 'Business is Business',
+    lessonTitle: 'Correspondence & Reporting',
+    suggestedDuration: 11,
+    targetCompetencies: [
+      'Write a facsimile and reply',
+      'Grammar: Imperatives (Past/Future context)',
+      'Functions: Persuading, Negotiating, Advising'
+    ]
+  },
+
+  // ==========================================
+  // ENGLISH 2AS (Literary & Philosophy - آداب وفلسفة)
+  // ==========================================
+  {
+    id: 'eng_2as_lit_u1_1',
+    code: 'ENG-2AS-LIT-U1-L1',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '2AS',
+    stream: 'آداب وفلسفة',
+    domain: 'Diversity / Lifestyles',
+    unit: 'Signs of the Time',
+    lessonTitle: 'Lifestyles: Past, Present & Future',
+    suggestedDuration: 6,
+    targetCompetencies: [
+      'Compare cultural differences and lifestyles',
+      'Grammar: Used to / Going to',
+      'Grammar: Comparatives & Superlatives',
+      'Lexis: Clothes, Food, Habits'
+    ]
+  },
+  {
+    id: 'eng_2as_lit_u1_2',
+    code: 'ENG-2AS-LIT-U1-L2',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '2AS',
+    stream: 'آداب وفلسفة',
+    domain: 'Diversity / Lifestyles',
+    unit: 'Signs of the Time',
+    lessonTitle: 'Language Focus: Contrast & Similarity',
+    suggestedDuration: 6,
+    targetCompetencies: [
+      'Grammar: Non-defining relative clauses',
+      'Grammar: Link words (comparing/contrasting)',
+      'Project: Profile of teenagers (Then vs Now)'
+    ]
+  },
+  {
+    id: 'eng_2as_lit_u2',
+    code: 'ENG-2AS-LIT-U2',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '2AS',
+    stream: 'آداب وفلسفة',
+    domain: 'Peace and Conflict',
+    unit: 'Make Peace',
+    lessonTitle: 'Peace & Conflict (Extended)',
+    suggestedDuration: 18,
+    targetCompetencies: ['Similar to Science but more focus on writing/literature']
+  },
+  {
+    id: 'eng_2as_lit_u3',
+    code: 'ENG-2AS-LIT-U3',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '2AS',
+    stream: 'آداب وفلسفة',
+    domain: 'Poverty and World Resources',
+    unit: 'Waste not, Want not',
+    lessonTitle: 'Resources & Poverty',
+    suggestedDuration: 24,
+    targetCompetencies: ['Similar to Science stream']
+  },
+  {
+    id: 'eng_2as_lit_u4_1',
+    code: 'ENG-2AS-LIT-U4-L1',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '2AS',
+    stream: 'آداب وفلسفة',
+    domain: 'Technology and the Arts',
+    unit: 'Fiction or Reality',
+    lessonTitle: 'Science Fiction',
+    suggestedDuration: 10,
+    targetCompetencies: [
+      'Explain concept of Science Fiction',
+      'Grammar: Conditionals Type 2 & 3',
+      'Grammar: If only / I wish',
+      'Write a sci-fi story or article'
+    ]
+  },
+  {
+    id: 'eng_2as_lit_u5',
+    code: 'ENG-2AS-LIT-U5',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '2AS',
+    stream: 'آداب وفلسفة',
+    domain: 'Disasters and Safety',
+    unit: 'No Man is an Island',
+    lessonTitle: 'Safety & Disasters',
+    suggestedDuration: 20,
+    targetCompetencies: ['Similar to Science stream']
+  },
+
+  // ==========================================
+  // ENGLISH 2AS (Foreign Languages - لغات أجنبية)
+  // ==========================================
+  {
+    id: 'eng_2as_lang_u1',
+    code: 'ENG-2AS-LANG-U1',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '2AS',
+    stream: 'لغات أجنبية',
+    domain: 'Diversity / Lifestyles',
+    unit: 'Signs of the Time',
+    lessonTitle: 'Lifestyles (Intensive)',
+    suggestedDuration: 25,
+    targetCompetencies: ['Extended vocabulary on culture', 'More focus on speaking']
+  },
+  {
+    id: 'eng_2as_lang_u2',
+    code: 'ENG-2AS-LANG-U2',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '2AS',
+    stream: 'لغات أجنبية',
+    domain: 'Peace and Conflict',
+    unit: 'Make Peace',
+    lessonTitle: 'Peace & Diplomacy',
+    suggestedDuration: 25,
+    targetCompetencies: ['UN Role', 'Diplomacy vocabulary']
+  },
+  {
+    id: 'eng_2as_lang_u3',
+    code: 'ENG-2AS-LANG-U3',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '2AS',
+    stream: 'لغات أجنبية',
+    domain: 'Poverty and Resources',
+    unit: 'Waste not, Want not',
+    lessonTitle: 'Global Issues',
+    suggestedDuration: 25,
+    targetCompetencies: ['Global poverty', 'Resource management']
+  },
+  {
+    id: 'eng_2as_lang_u4',
+    code: 'ENG-2AS-LANG-U4',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '2AS',
+    stream: 'لغات أجنبية',
+    domain: 'Technology and Innovation',
+    unit: 'Budding Scientist',
+    lessonTitle: 'Innovation & Progress',
+    suggestedDuration: 20,
+    targetCompetencies: ['Impact of technology', 'Scientific ethics']
+  },
+  {
+    id: 'eng_2as_lang_u5',
+    code: 'ENG-2AS-LANG-U5',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '2AS',
+    stream: 'لغات أجنبية',
+    domain: 'Technology and the Arts',
+    unit: 'Fiction or Reality',
+    lessonTitle: 'Literature & Sci-Fi',
+    suggestedDuration: 20,
+    targetCompetencies: ['Analyzing fiction', 'Writing narratives']
+  },
+  {
+    id: 'eng_2as_lang_u6',
+    code: 'ENG-2AS-LANG-U6',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '2AS',
+    stream: 'لغات أجنبية',
+    domain: 'Disasters and Safety',
+    unit: 'No Man is an Island',
+    lessonTitle: 'Solidarity & Safety',
+    suggestedDuration: 20,
+    targetCompetencies: ['International solidarity', 'Safety reports']
+  },
+
+  // ==========================================
+  // ENGLISH 3AS (Common Streams: Science, Maths, Tech, Eco)
+  // ==========================================
+  {
+    id: 'eng_3as_sci_u1_1',
+    code: 'ENG-3AS-SCI-U1-L1',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '3AS',
+    stream: 'علوم تجريبية',
+    domain: 'Ethics in Business',
+    unit: 'Ill Gotten Gains Never Prosper',
+    lessonTitle: 'Corruption & Fraud',
+    suggestedDuration: 8,
+    targetCompetencies: [
+      'Define ethics in business',
+      'Grammar: Expressing condition (Provided that/as long as)',
+      'Grammar: Wish and Desire (It’s high time)',
+      'Lexis: Fraud, Corruption, Money Laundering'
+    ]
+  },
+  {
+    id: 'eng_3as_sci_u1_2',
+    code: 'ENG-3AS-SCI-U1-L2',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '3AS',
+    stream: 'علوم تجريبية',
+    domain: 'Ethics in Business',
+    unit: 'Ill Gotten Gains Never Prosper',
+    lessonTitle: 'Developing Skills: Argumentative Speech',
+    suggestedDuration: 8,
+    targetCompetencies: [
+      'Write an opinion article about counterfeiting',
+      'Grammar: Advising (Should, Ought to, Had better)',
+      'Grammar: Cause/Effect (so...that, consequently)',
+      'Project: Charter of Ethics'
+    ]
+  },
+  {
+    id: 'eng_3as_sci_u2_1',
+    code: 'ENG-3AS-SCI-U2-L1',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '3AS',
+    stream: 'علوم تجريبية',
+    domain: 'Advertising, Consumers and Safety',
+    unit: 'Safety First',
+    lessonTitle: 'Advertising & Food Safety',
+    suggestedDuration: 12,
+    targetCompetencies: [
+      'Discuss impact of advertising',
+      'Grammar: Probability (May, Might, Can)',
+      'Grammar: Conditionals Type 1',
+      'Lexis: Consumption, Safety, Organic food'
+    ]
+  },
+  {
+    id: 'eng_3as_sci_u2_2',
+    code: 'ENG-3AS-SCI-U2-L2',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '3AS',
+    stream: 'علوم تجريبية',
+    domain: 'Advertising, Consumers and Safety',
+    unit: 'Safety First',
+    lessonTitle: 'Developing Skills: Persuasion',
+    suggestedDuration: 12,
+    targetCompetencies: [
+      'Write a letter of complaint',
+      'Make a survey on eating habits',
+      'Grammar: Imperatives & Persuasion techniques',
+      'Project: Booklet on Food Safety'
+    ]
+  },
+  {
+    id: 'eng_3as_sci_u3_1',
+    code: 'ENG-3AS-SCI-U3-L1',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '3AS',
+    stream: 'علوم تجريبية',
+    domain: 'Astronomy and the Solar System',
+    unit: 'It’s a Giant Leap for Mankind',
+    lessonTitle: 'Space & Solar System',
+    suggestedDuration: 9,
+    targetCompetencies: [
+      'Describe solar system and planets',
+      'Grammar: Conditionals (Unless, If)',
+      'Grammar: Comparatives (Like, Unlike, Whereas)',
+      'Lexis: Space, Dimensions, Satellites'
+    ]
+  },
+  {
+    id: 'eng_3as_sci_u3_2',
+    code: 'ENG-3AS-SCI-U3-L2',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '3AS',
+    stream: 'علوم تجريبية',
+    domain: 'Astronomy and the Solar System',
+    unit: 'It’s a Giant Leap for Mankind',
+    lessonTitle: 'Developing Skills: Expository Writing',
+    suggestedDuration: 9,
+    targetCompetencies: [
+      'Write an article about space exploration',
+      'Expressing Concession (However, Although)',
+      'Project: Astronomy Booklet'
+    ]
+  },
+  {
+    id: 'eng_3as_sci_u4_1',
+    code: 'ENG-3AS-SCI-U4-L1',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '3AS',
+    stream: 'علوم تجريبية',
+    domain: 'Feelings and Emotions',
+    unit: 'We are a Family',
+    lessonTitle: 'Emotions & Humour',
+    suggestedDuration: 18,
+    targetCompetencies: [
+      'Expressing feelings (Love, Anger, Friendship)',
+      'Grammar: Articles with abstract nouns',
+      'Grammar: Quantifiers (Each other, One another)',
+      'Grammar: Forming adjectives/verbs (-ful, -en)',
+      'Project: Booklet on coping with emotions'
+    ]
+  },
+
+  // ==========================================
+  // ENGLISH 3AS (Literature & Philosophy / Foreign Languages)
+  // ==========================================
+  {
+    id: 'eng_3as_lit_u1_1',
+    code: 'ENG-3AS-LIT-U1-L1',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '3AS',
+    stream: 'آداب وفلسفة',
+    domain: 'Exploring the Past',
+    unit: 'Ancient Civilizations',
+    lessonTitle: 'Rise & Fall of Civilizations',
+    suggestedDuration: 14,
+    targetCompetencies: [
+      'Identify major ancient civilizations',
+      'Describe past habits (Used to)',
+      'Grammar: Past Simple vs Past Perfect',
+      'Lexis: Archaeology, History, Myths'
+    ]
+  },
+  {
+    id: 'eng_3as_lit_u1_2',
+    code: 'ENG-3AS-LIT-U1-L2',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '3AS',
+    stream: 'آداب وفلسفة',
+    domain: 'Exploring the Past',
+    unit: 'Ancient Civilizations',
+    lessonTitle: 'Developing Skills: Historical Account',
+    suggestedDuration: 14,
+    targetCompetencies: [
+      'Write a historical account of a civilization',
+      'Grammar: Concession (Though, In spite of)',
+      'Grammar: Quantifiers (Few, Little)',
+      'Project: Booklet on Ancient Civilizations'
+    ]
+  },
+  {
+    id: 'eng_3as_lit_u2_1',
+    code: 'ENG-3AS-LIT-U2-L1',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '3AS',
+    stream: 'آداب وفلسفة',
+    domain: 'Ethics in Business',
+    unit: 'Ill Gotten Gains Never Prosper',
+    lessonTitle: 'Ethics & Corruption (Extended)',
+    suggestedDuration: 28,
+    targetCompetencies: [
+      'Similar to Science stream but deeper analysis',
+      'Focus on argumentative writing',
+      'Defending a point of view on ethics'
+    ]
+  },
+  {
+    id: 'eng_3as_lit_u3_1',
+    code: 'ENG-3AS-LIT-U3-L1',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '3AS',
+    stream: 'آداب وفلسفة',
+    domain: 'Education in the World',
+    unit: 'Schools: Different and Alike',
+    lessonTitle: 'Comparing Educational Systems',
+    suggestedDuration: 14,
+    targetCompetencies: [
+      'Compare different school systems',
+      'Grammar: Present Passive',
+      'Grammar: Conditionals (1, 2, 3)',
+      'Lexis: Education, Curriculum, Exams'
+    ]
+  },
+  {
+    id: 'eng_3as_lit_u3_2',
+    code: 'ENG-3AS-LIT-U3-L2',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '3AS',
+    stream: 'آداب وفلسفة',
+    domain: 'Education in the World',
+    unit: 'Schools: Different and Alike',
+    lessonTitle: 'Developing Skills: Educational Report',
+    suggestedDuration: 14,
+    targetCompetencies: [
+      'Write an expository article on exam stress',
+      'Expressing Desire/Wish (I wish, If only)',
+      'Project: School Website / Brochure'
+    ]
+  },
+  {
+    id: 'eng_3as_lit_u4_1',
+    code: 'ENG-3AS-LIT-U4-L1',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '3AS',
+    stream: 'آداب وفلسفة',
+    domain: 'Feelings and Emotions',
+    unit: 'We are a Family',
+    lessonTitle: 'Emotions & Literature',
+    suggestedDuration: 28,
+    targetCompetencies: [
+      'Analyze literary texts about emotions',
+      'Grammar: Emotional adjectives',
+      'Expressing feelings in different cultures'
+    ]
+  },
+
+  // ==========================================
+  // ENGLISH 3AS (Foreign Languages - Mirrors Lit/Phil mostly)
+  // ==========================================
+  {
+    id: 'eng_3as_lang_u1',
+    code: 'ENG-3AS-LANG-U1',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '3AS',
+    stream: 'لغات أجنبية',
+    domain: 'Exploring the Past',
+    unit: 'Ancient Civilizations',
+    lessonTitle: 'Ancient Civilizations (Intensive)',
+    suggestedDuration: 28,
+    targetCompetencies: ['Detailed historical analysis', 'Myths and Legends']
+  },
+  {
+    id: 'eng_3as_lang_u2',
+    code: 'ENG-3AS-LANG-U2',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '3AS',
+    stream: 'لغات أجنبية',
+    domain: 'Ethics in Business',
+    unit: 'Ill Gotten Gains Never Prosper',
+    lessonTitle: 'Business Ethics',
+    suggestedDuration: 28,
+    targetCompetencies: ['Ethics case studies', 'Debate on corruption']
+  },
+  {
+    id: 'eng_3as_lang_u3',
+    code: 'ENG-3AS-LANG-U3',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '3AS',
+    stream: 'لغات أجنبية',
+    domain: 'Education in the World',
+    unit: 'Schools: Different and Alike',
+    lessonTitle: 'Global Education',
+    suggestedDuration: 28,
+    targetCompetencies: ['Comparative education', 'Educational challenges']
+  },
+  {
+    id: 'eng_3as_lang_u4',
+    code: 'ENG-3AS-LANG-U4',
+    cycle: 'secondary',
+    subject: 'لغة إنجليزية',
+    level: '3AS',
+    stream: 'لغات أجنبية',
+    domain: 'Feelings and Emotions',
+    unit: 'We are a Family',
+    lessonTitle: 'Feelings & Relations',
+    suggestedDuration: 28,
+    targetCompetencies: ['Humour and satire', 'Cross-cultural emotions']
+  },
+
   // --- INFORMATICS 1AS (SCIENCE/TECH) ---
   // ... (Existing Informatics Curriculum kept as is) ...
   {
@@ -152,869 +1510,6 @@ export const ALGERIAN_CURRICULUM: CurriculumStandard[] = [
       'يستنتج أهمية تكنولوجيا الإعلام والاتصال في الحياة اليومية'
     ]
   },
-  
-  // --- CIVIL ENGINEERING 1AS (Common Core Science & Technology) ---
-  // Domain: الجزء النظري (Theoretical Part)
-  {
-    id: 'civ_1as_theory_u1',
-    code: 'CIV-1AS-TH-U1',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '1AS',
-    stream: 'جذع مشترك علوم وتكنولوجيا',
-    domain: 'الجزء النظري',
-    unit: 'اإلطالع على ميدان الهندسة المدنية',
-    lessonTitle: 'تعريف وتصنيف منشآت الهندسة المدنية واختيار الأرض',
-    suggestedDuration: 2,
-    targetCompetencies: [
-      'يتعرف على الهندسة المدنية ومكانتها',
-      'يصنف مختلف منشآت الهندسة المدنية',
-      'يتعرف على العوامل المختلفة لاختيار قطعة أرض للبناء'
-    ],
-    performanceIndicators: [
-      'يحدد مكانة الهندسة المدنية',
-      'يصنف المنشآت انطلاقاً من صور (مباني، جسور، طرق...)',
-      'يلخص مراحل الحصول على قطعة أرض',
-      'يناقش العوامل: الموقع، نوعية التربة، التهيئة'
-    ]
-  },
-  {
-    id: 'civ_1as_theory_u2',
-    code: 'CIV-1AS-TH-U2',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '1AS',
-    stream: 'جذع مشترك علوم وتكنولوجيا',
-    domain: 'الجزء النظري',
-    unit: 'رخصة البناء',
-    lessonTitle: 'الملف الإداري والتقني لرخصة البناء',
-    suggestedDuration: 1,
-    targetCompetencies: [
-      'يتعرف على مختلف الوثائق المكونة لملف رخصة البناء',
-      'يدرك أهمية رخصة البناء وطريقة الحصول عليها'
-    ],
-    performanceIndicators: [
-      'يميز بين الوثائق المكتوبة (الطلب، الكشوف، العقد) والوثائق الخطية (المخططات)',
-      'يحدد دور المتدخلين (صاحب المشروع، مكتب الدراسات، البلدية)',
-      'ينجز مخططاً بيانيا لمراحل الحصول على الرخصة'
-    ]
-  },
-  {
-    id: 'civ_1as_theory_u3',
-    code: 'CIV-1AS-TH-U3',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '1AS',
-    stream: 'جذع مشترك علوم وتكنولوجيا',
-    domain: 'الجزء النظري',
-    unit: 'الرسم المدعم بالحاسوب',
-    lessonTitle: 'أساسيات البرنامج وتمثيل المحاور والأعمدة',
-    suggestedDuration: 2,
-    targetCompetencies: [
-      'يكتشف واجهة برنامج الرسم المدعم بالحاسوب',
-      'يستغل البرنامج لتمثيل العناصر البسيطة'
-    ],
-    performanceIndicators: [
-      'يشغل البرنامج ويفتح دورة عمل',
-      'يميز أشرطة الأدوات',
-      'يوظف أوامر الرسم والتغيير لتمثيل المحاور والأعمدة'
-    ]
-  },
-  {
-    id: 'civ_1as_theory_u4',
-    code: 'CIV-1AS-TH-U4',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '1AS',
-    stream: 'جذع مشترك علوم وتكنولوجيا',
-    domain: 'الجزء النظري',
-    unit: 'الرسم المدعم بالحاسوب',
-    lessonTitle: 'تمثيل الجدران والفتحات (أبواب ونوافذ)',
-    suggestedDuration: 2,
-    targetCompetencies: [
-      'يتعرف على الجدران وأنواعها',
-      'يتعرف على الفتحات وأدوارها',
-      'يستغل البرنامج لتمثيل الجدران والفتحات'
-    ],
-    performanceIndicators: [
-      'يستخلص أدوار الجدران (الرئيسية والثانوية)',
-      'يستخدم أوامر الرسم (Ligne, Arc) والتعديل لرسم الجدران والفتحات بدقة'
-    ]
-  },
-
-  // Domain: الجزء التطبيقي (Practical Part)
-  {
-    id: 'civ_1as_prac_u1',
-    code: 'CIV-1AS-PR-U1',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '1AS',
-    stream: 'جذع مشترك علوم وتكنولوجيا',
-    domain: 'الجزء التطبيقي',
-    unit: 'مخطط التوزيع',
-    lessonTitle: 'اقتراح مخطط توزيع واستغلال قطعة أرض',
-    suggestedDuration: 2,
-    targetCompetencies: [
-      'يستغل قطعة أرض للبناء',
-      'يقترح مخطط توزيع يحترم المعايير'
-    ],
-    performanceIndicators: [
-      'يقرأ مخطط الكتلة',
-      'يناقش مواصفات المشروع (الواجهات، المحيط)',
-      'يشرح ويبرر المخطط المقترح'
-    ]
-  },
-  {
-    id: 'civ_1as_prac_u2',
-    code: 'CIV-1AS-PR-U2',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '1AS',
-    stream: 'جذع مشترك علوم وتكنولوجيا',
-    domain: 'الجزء التطبيقي',
-    unit: 'مخطط التوزيع',
-    lessonTitle: 'رسم المحاور، الأعمدة والجدران (DAO)',
-    suggestedDuration: 4,
-    targetCompetencies: [
-      'يرسم المحاور والأعمدة والجدران بدقة باستعمال الحاسوب'
-    ],
-    performanceIndicators: [
-      'يستحدث منسوخات (Calques) بخصائص مختلفة (لون، سمك)',
-      'يطبق أوامر (Ligne, Polyligne, Décaler, Ajuster, Copier)',
-      'يستخدم تعليمة Accrochage للتدقيق'
-    ]
-  },
-  {
-    id: 'civ_1as_prac_u3',
-    code: 'CIV-1AS-PR-U3',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '1AS',
-    stream: 'جذع مشترك علوم وتكنولوجيا',
-    domain: 'الجزء التطبيقي',
-    unit: 'مخطط التوزيع',
-    lessonTitle: 'رسم الأبواب والنوافذ والإنهاء (DAO)',
-    suggestedDuration: 2,
-    targetCompetencies: [
-      'يكمل رسم المخطط بتمثيل الفتحات'
-    ],
-    performanceIndicators: [
-      'يستحدث منسوخ الفتحات',
-      'يرسم الرموز الاصطلاحية للأبواب والنوافذ',
-      'يحفظ ملف الرسم النهائي'
-    ]
-  },
-
-  // --- CIVIL ENGINEERING 2AS (Technical Math) ---
-  // Domain 1: البناء (Construction)
-  {
-    id: 'civ_2as_d1_u1',
-    code: 'CIV-2AS-D1-U1',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '2AS',
-    stream: 'تقني رياضي',
-    domain: 'البناء',
-    unit: 'عموميات على الهندسة المدنية',
-    lessonTitle: 'مدخل لميدان الهندسة المدنية والملف التقني',
-    suggestedDuration: 12,
-    targetCompetencies: [
-      'يحلل هياكل المهنة والمتدخلون في البناء',
-      'يدرس ملف تقني لمشروع',
-      'يضبط المؤسسة ومحيطها'
-    ],
-    performanceIndicators: [
-      'يصنف مختلف منشآت الهندسة المدنية',
-      'يدرك أدوار مختلف المتدخلين (صاحب المشروع، المقاول...)',
-      'يميز وثائق الملف التقني (المخططات، الكشوف)',
-      'ينجز مخططاً حول كيفية تدخل مؤسسة البناء'
-    ]
-  },
-  {
-    id: 'civ_2as_d1_u2',
-    code: 'CIV-2AS-D1-U2',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '2AS',
-    stream: 'تقني رياضي',
-    domain: 'البناء',
-    unit: 'دراسة الأرضية',
-    lessonTitle: 'الجيولوجيا وميكانيك التربة',
-    suggestedDuration: 12,
-    targetCompetencies: [
-      'يصنف مختلف أنواع التربة',
-      'يتعرف على الخصائص الميكانيكية للتربة'
-    ],
-    performanceIndicators: [
-      'يشرح مبدأ تجارب تصنيف التربة (التحليل الحبيبي، حدود أتربارغ)',
-      'يحسب المحتوى المائي والعوامل الفيزيائية',
-      'يحدد أهمية الدراسة الجيوتقنية'
-    ]
-  },
-  {
-    id: 'civ_2as_d1_u3',
-    code: 'CIV-2AS-D1-U3',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '2AS',
-    stream: 'تقني رياضي',
-    domain: 'البناء',
-    unit: 'دراسة الأرضية',
-    lessonTitle: 'الطبوغرافيا والتجريفات',
-    suggestedDuration: 6,
-    targetCompetencies: [
-      'يتحكم في الحسابات الخاصة بالرفع والتوقيع',
-      'يدير عملية التجريفات'
-    ],
-    performanceIndicators: [
-      'يقرأ خريطة طبوغرافية',
-      'يميز بين عمليتي التوقيع والرفع',
-      'يربط بين عمليات التجريف (حفر، ردم) والعتاد المناسب',
-      'يحسب حجوم التجريفات'
-    ]
-  },
-  {
-    id: 'civ_2as_d1_u4',
-    code: 'CIV-2AS-D1-U4',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '2AS',
-    stream: 'تقني رياضي',
-    domain: 'البناء',
-    unit: 'مواد البناء',
-    lessonTitle: 'المواد المختلفة (خشب، فولاذ، لدائن)',
-    suggestedDuration: 6,
-    targetCompetencies: [
-      'يختار مختلف المواد حسب خصائصها ومجال استعمالها'
-    ],
-    performanceIndicators: [
-      'يميز بين المواد المتجانسة وغير المتجانسة',
-      'يبرر اختيار مادة معينة في مشروع بناء'
-    ]
-  },
-  {
-    id: 'civ_2as_d1_u5',
-    code: 'CIV-2AS-D1-U5',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '2AS',
-    stream: 'تقني رياضي',
-    domain: 'البناء',
-    unit: 'مواد البناء',
-    lessonTitle: 'الخرسانة والخرسانة المسلحة',
-    suggestedDuration: 6,
-    targetCompetencies: [
-      'يتعرف على مكونات الخرسانة',
-      'يفهم مبدأ الخرسانة المسلحة'
-    ],
-    performanceIndicators: [
-      'يحدد دور كل مكون (إسمنت، رمل، حصى، ماء)',
-      'يشرح أهمية الإضافات والتسليح',
-      'يحسب نسب مكونات الخرسانة (المعايرة)'
-    ]
-  },
-  {
-    id: 'civ_2as_d1_u6',
-    code: 'CIV-2AS-D1-U6',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '2AS',
-    stream: 'تقني رياضي',
-    domain: 'البناء',
-    unit: 'المنشآت السفلية',
-    lessonTitle: 'األساسات السطحية والعميقة',
-    suggestedDuration: 2,
-    targetCompetencies: [
-      'يدرس مختلف أنواع الأساسات',
-      'يختار نوع الأساس المناسب'
-    ],
-    performanceIndicators: [
-      'يصنف الأساسات (منعزلة، مستمرة، لبشة، أوتاد)',
-      'يحدد عوامل اختيار نوع الأساس'
-    ]
-  },
-  {
-    id: 'civ_2as_d1_u7',
-    code: 'CIV-2AS-D1-U7',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '2AS',
-    stream: 'تقني رياضي',
-    domain: 'البناء',
-    unit: 'المنشآت السفلية',
-    lessonTitle: 'جدران الاستناد والتطهير',
-    suggestedDuration: 12,
-    targetCompetencies: [
-      'يقترح حلول استناد (جدران)',
-      'يختار نوع شبكة التطهير المناسبة'
-    ],
-    performanceIndicators: [
-      'يميز مكونات جدار الاستناد',
-      'يقترح طرق التطهير (الصرف الصحي) في المدن والأرياف',
-      'يرسم مخطط تطهير بسيط'
-    ]
-  },
-
-  // Domain 2: ميكانيك مطبقة (Applied Mechanics)
-  {
-    id: 'civ_2as_d2_u1',
-    code: 'CIV-2AS-D2-U1',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '2AS',
-    stream: 'تقني رياضي',
-    domain: 'ميكانيك مطبقة',
-    unit: 'علم السكون',
-    lessonTitle: 'القوى والعزوم ومبدأ التوازن',
-    suggestedDuration: 24,
-    targetCompetencies: [
-      'يتعرف على المبادئ الأولية لعلم السكون',
-      'ينمذج التأثيرات الميكانيكية (قوى، عزوم)',
-      'يطبق نظرية فارينيون'
-    ],
-    performanceIndicators: [
-      'يحسب محصلة القوى تحليلياً',
-      'يحلل قوة إلى مركبتين',
-      'يحسب عزم قوة بالنسبة لنقطة',
-      'يطبق شروط التوازن'
-    ]
-  },
-  {
-    id: 'civ_2as_d2_u2',
-    code: 'CIV-2AS-D2-U2',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '2AS',
-    stream: 'تقني رياضي',
-    domain: 'ميكانيك مطبقة',
-    unit: 'علم السكون',
-    lessonTitle: 'المساند وردود الأفعال',
-    suggestedDuration: 14,
-    targetCompetencies: [
-      'ينمذج مختلف المساند',
-      'يحل إشكاليات في علم السكون (حساب الردود)'
-    ],
-    performanceIndicators: [
-      'يميز بين المسند البسيط، المزدوج، والمدمج',
-      'يطبق معادلات التوازن لحساب ردود الأفعال في الروافد المحددة سكونياً'
-    ]
-  },
-  {
-    id: 'civ_2as_d2_u3',
-    code: 'CIV-2AS-D2-U3',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '2AS',
-    stream: 'تقني رياضي',
-    domain: 'ميكانيك مطبقة',
-    unit: 'الخصائص الهندسية للمقاطع',
-    lessonTitle: 'مركز الثقل والعزم السكوني',
-    suggestedDuration: 4,
-    targetCompetencies: [
-      'يحدد إحداثيات مركز الثقل للمقاطع المستوية'
-    ],
-    performanceIndicators: [
-      'يحسب العزم السكوني لمقطع',
-      'يحدد مركز ثقل مقطع مركب (مملوء أو مجوف)'
-    ]
-  },
-  {
-    id: 'civ_2as_d2_u4',
-    code: 'CIV-2AS-D2-U4',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '2AS',
-    stream: 'تقني رياضي',
-    domain: 'ميكانيك مطبقة',
-    unit: 'الخصائص الهندسية للمقاطع',
-    lessonTitle: 'عزم العطالة ونظرية هويغنس',
-    suggestedDuration: 14,
-    targetCompetencies: [
-      'يستعمل نظرية هويغنس لحساب عزم العطالة'
-    ],
-    performanceIndicators: [
-      'يحسب عزم العطالة لمقاطع هندسية بسيطة',
-      'يطبق نظرية المحاور المتوازية (هويغنس) للمقاطع المركبة'
-    ]
-  },
-
-  // Domain 3: أعمال مؤطرة (Guided Works / TP)
-  {
-    id: 'civ_2as_d3_u1',
-    code: 'CIV-2AS-D3-U1',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '2AS',
-    stream: 'تقني رياضي',
-    domain: 'أعمال مؤطرة',
-    unit: 'معلومات حول الرسم المدعم بالحاسوب',
-    lessonTitle: 'استعمال برنامج DAO وقراءة المخططات',
-    suggestedDuration: 14,
-    targetCompetencies: [
-      'يستعمل برنامج الرسم المدعم بالحاسوب',
-      'يحلل ويقرأ مخططات معمارية'
-    ],
-    performanceIndicators: [
-      'يطبق أوامر الرسم والتعديل',
-      'يقرأ مخططات مشروع سكني'
-    ]
-  },
-  {
-    id: 'civ_2as_d3_u2',
-    code: 'CIV-2AS-D3-U2',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '2AS',
-    stream: 'تقني رياضي',
-    domain: 'أعمال مؤطرة',
-    unit: 'القوى',
-    lessonTitle: 'تطبيقات حول القوى والعزوم',
-    suggestedDuration: 4,
-    targetCompetencies: [
-      'يطبق نظرية فارينيون في تمارين'
-    ],
-    performanceIndicators: [
-      'يتحكم في تركيب وتحليل القوى عددياً وبيانياً'
-    ]
-  },
-  {
-    id: 'civ_2as_d3_u3',
-    code: 'CIV-2AS-D3-U3',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '2AS',
-    stream: 'تقني رياضي',
-    domain: 'أعمال مؤطرة',
-    unit: 'التجارب المخبرية',
-    lessonTitle: 'تجارب تصنيف التربة',
-    suggestedDuration: 6,
-    targetCompetencies: [
-      'يحلل نتائج عملية تجريبية'
-    ],
-    performanceIndicators: [
-      'ينجز أو يحاكي تجارب (التحليل الحبيبي، حدود أتربارغ)',
-      'يستثمر النتائج لتصنيف التربة'
-    ]
-  },
-  {
-    id: 'civ_2as_d3_u4',
-    code: 'CIV-2AS-D3-U4',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '2AS',
-    stream: 'تقني رياضي',
-    domain: 'أعمال مؤطرة',
-    unit: 'استعمال الأجهزة الطبوغرافية',
-    lessonTitle: 'تطبيقات الرفع الطبوغرافي',
-    suggestedDuration: 6,
-    targetCompetencies: [
-      'يطبق طرق الرفع باستعمال الجهاز'
-    ],
-    performanceIndicators: [
-      'يتحكم في وضع الجهاز على المحطة',
-      'يقرأ القياسات ويسجلها'
-    ]
-  },
-  {
-    id: 'civ_2as_d3_u5',
-    code: 'CIV-2AS-D3-U5',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '2AS',
-    stream: 'تقني رياضي',
-    domain: 'أعمال مؤطرة',
-    unit: 'التجريفات',
-    lessonTitle: 'تقييم أعمال التجريفات',
-    suggestedDuration: 8,
-    targetCompetencies: [
-      'يقيم أعمال التجريفات (حساب الكلفة)',
-      'يستعمل المجدول في الحسابات'
-    ],
-    performanceIndicators: [
-      'يحسب حجوم التربة مع مراعاة الانتفاش والارتصاص',
-      'ينجز كشفاً كمياً وسعرياً للتجريفات'
-    ]
-  },
-  {
-    id: 'civ_2as_d3_u6',
-    code: 'CIV-2AS-D3-U6',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '2AS',
-    stream: 'تقني رياضي',
-    domain: 'أعمال مؤطرة',
-    unit: 'الخصائص الهندسية',
-    lessonTitle: 'تطبيقات حول الخصائص الهندسية و DAO',
-    suggestedDuration: 6,
-    targetCompetencies: [
-      'يحدد الخصائص الهندسية للمقاطع المستوية',
-      'يتحقق من النتائج باستعمال برمجية DAO'
-    ],
-    performanceIndicators: [
-      'يتقن حساب مركز الثقل وعزم العطالة',
-      'يوظف البرمجية للتحقق من صحة النتائج'
-    ]
-  },
-  {
-    id: 'civ_2as_d3_u7',
-    code: 'CIV-2AS-D3-U7',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '2AS',
-    stream: 'تقني رياضي',
-    domain: 'أعمال مؤطرة',
-    unit: 'الأساسات السطحية',
-    lessonTitle: 'رسم مخطط قولبة الأساسات (DAO)',
-    suggestedDuration: 8,
-    targetCompetencies: [
-      'يتحكم في الأوامر اللازمة لإنشاء مخطط قولبة'
-    ],
-    performanceIndicators: [
-      'يقرأ مخططات قولبة الأساسات',
-      'يرسم مخطط قولبة أساسات منعزلة باستخدام الحاسوب'
-    ]
-  },
-  {
-    id: 'civ_2as_d3_u8',
-    code: 'CIV-2AS-D3-U8',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '2AS',
-    stream: 'تقني رياضي',
-    domain: 'أعمال مؤطرة',
-    unit: 'الفعل ورد الفعل',
-    lessonTitle: 'تطبيقات حول التوازن',
-    suggestedDuration: 4,
-    targetCompetencies: [
-      'يطبق معادلات التوازن'
-    ],
-    performanceIndicators: [
-      'يحسب ردود الأفعال بدقة'
-    ]
-  },
-
-  // --- CIVIL ENGINEERING 3AS (Technical Math) ---
-  
-  // Domain 1: البناء (Construction)
-  {
-    id: 'civ_3as_d1_u1',
-    code: 'CIV-3AS-D1-U1',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '3AS',
-    stream: 'تقني رياضي',
-    domain: 'البناء',
-    unit: 'المنشأ العلوي',
-    lessonTitle: 'عناصر المنشأ العلوي (أعمدة، روافد، أرضيات)',
-    suggestedDuration: 14,
-    targetCompetencies: [
-      'يدرس مختلف عناصر المنشآت العلوية',
-      'يميز أدوار عناصر المنشأ العلوي'
-    ],
-    performanceIndicators: [
-      'يسمي عناصر المنشأ العلوي',
-      'يصنف العناصر حسب مادة الصنع وشكل المقطع',
-      'يحسب أبعاد مدرج مستقيم',
-      'يصمم مدرج مستقيم'
-    ]
-  },
-  {
-    id: 'civ_3as_d1_u2',
-    code: 'CIV-3AS-D1-U2',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '3AS',
-    stream: 'تقني رياضي',
-    domain: 'البناء',
-    unit: 'عموميات حول الطبوغرافيا',
-    lessonTitle: 'حساب المساحات (الإحداثيات القطبية والديكارتية)',
-    suggestedDuration: 10,
-    targetCompetencies: [
-      'يقترح طريقة لحساب المساحات',
-      'يتحكم في المبادئ الرياضية لحساب المثلثات'
-    ],
-    performanceIndicators: [
-      'يحسب السمت الإحداثي',
-      'يحسب مساحة مضلع بطريقة الإحداثيات الديكارتية',
-      'يحسب مساحة مضلع بطريقة الإحداثيات القطبية',
-      'يحل إشكالية تجزئة مساحة'
-    ]
-  },
-  {
-    id: 'civ_3as_d1_u3',
-    code: 'CIV-3AS-D1-U3',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '3AS',
-    stream: 'تقني رياضي',
-    domain: 'البناء',
-    unit: 'الطرق',
-    lessonTitle: 'تخطيط مشروع طريق (المظاهر العرضية والطولية)',
-    suggestedDuration: 16,
-    targetCompetencies: [
-      'يساهم في تخطيط مشروع طريق',
-      'يتعرف على مختلف مكونات القارعة'
-    ],
-    performanceIndicators: [
-      'يعدد ويبين أدوار العناصر المكونة للطريق',
-      'يحسب ويمثل المظهر الطولي',
-      'يحسب ويمثل المظهر العرضي النموذجي',
-      'يقارن مختلف طبقات قارعة الطريق'
-    ]
-  },
-  {
-    id: 'civ_3as_d1_u4',
-    code: 'CIV-3AS-D1-U4',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '3AS',
-    stream: 'تقني رياضي',
-    domain: 'البناء',
-    unit: 'الجسور',
-    lessonTitle: 'تعريف وتصنيف الجسور',
-    suggestedDuration: 12,
-    targetCompetencies: [
-      'يميز بين مختلف العناصر المكونة للجسور',
-      'يصنف الجسور حسب المادة والشكل'
-    ],
-    performanceIndicators: [
-      'يسمي العناصر الأساسية والثانوية للجسر',
-      'يكتشف دور كل عنصر',
-      'يميز بين الجسور المعدنية والخرسانية'
-    ]
-  },
-
-  // Domain 2: ميكانيك مطبقة (Applied Mechanics)
-  {
-    id: 'civ_3as_d2_u1',
-    code: 'CIV-3AS-D2-U1',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '3AS',
-    stream: 'تقني رياضي',
-    domain: 'ميكانيك مطبقة',
-    unit: 'مقاومة المواد',
-    lessonTitle: 'التحريضات البسيطة (الشد، الانضغاط، القص)',
-    suggestedDuration: 14,
-    targetCompetencies: [
-      'يتعرف على مجال تطبيق مقاومة المواد',
-      'يتحقق من شرط المقاومة لعناصر معرضة لتحريضات بسيطة'
-    ],
-    performanceIndicators: [
-      'يميز بين مختلف أنواع الإجهادات (ناظمية، مماسية)',
-      'يستغل منحنى تجربة الشد لاستنتاج قانون هوك',
-      'يحسب الجهود والإجهادات ويتحقق من شرط المقاومة'
-    ]
-  },
-  {
-    id: 'civ_3as_d2_u2',
-    code: 'CIV-3AS-D2-U2',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '3AS',
-    stream: 'تقني رياضي',
-    domain: 'ميكانيك مطبقة',
-    unit: 'الأنظمة المثلثية',
-    lessonTitle: 'حساب الجهود الداخلية في الأنظمة المثلثية',
-    suggestedDuration: 8,
-    targetCompetencies: [
-      'يحسب الجهود الداخلية في القضبان',
-      'يحسب أبعاد المقطع العرضي للقضبان'
-    ],
-    performanceIndicators: [
-      'يتأكد من أن النظام محدد سكونياً',
-      'يحسب ردود الأفعال',
-      'يحسب الجهود الداخلية بطريقة عزل العقد',
-      'يوظف شرط المقاومة لتحديد أبعاد القضبان'
-    ]
-  },
-  {
-    id: 'civ_3as_d2_u3',
-    code: 'CIV-3AS-D2-U3',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '3AS',
-    stream: 'تقني رياضي',
-    domain: 'ميكانيك مطبقة',
-    unit: 'الانحناء البسيط المستوي',
-    lessonTitle: 'دراسة رافدة معرضة للانحناء البسيط',
-    suggestedDuration: 16,
-    targetCompetencies: [
-      'يدرس رافدة معرضة للانحناء البسيط المستوي',
-      'يرسم المنحنيات البيانية للجهود الداخلية'
-    ],
-    performanceIndicators: [
-      'يكتب معادلات الجهد القاطع (T) وعزم الانحناء (Mf)',
-      'يرسم المنحنيات البيانية لـ T و Mf',
-      'يتحكم في حساب الإجهادات الناظمية والمماسية',
-      'يوظف شرط المقاومة'
-    ]
-  },
-  {
-    id: 'civ_3as_d2_u4',
-    code: 'CIV-3AS-D2-U4',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '3AS',
-    stream: 'تقني رياضي',
-    domain: 'ميكانيك مطبقة',
-    unit: 'الخرسانة المسلحة',
-    lessonTitle: 'قوانين BAEL (الشد والانضغاط)',
-    suggestedDuration: 18,
-    targetCompetencies: [
-      'يطبق قوانين BAEL على عناصر محددة سكونياً',
-      'يبرر المقاطع المعرضة للتحريضات الناظمية'
-    ],
-    performanceIndicators: [
-      'يميز الحاالت النهائية (ELU, ELS)',
-      'يحسب تسليح شداد (Tirant) خاضع للشد البسيط',
-      'يحسب تسليح عمود (Poteau) خاضع للانضغاط البسيط'
-    ]
-  },
-
-  // Domain 3: أعمال مؤطرة (Guided Works / TP)
-  {
-    id: 'civ_3as_d3_u1',
-    code: 'CIV-3AS-D3-U1',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '3AS',
-    stream: 'تقني رياضي',
-    domain: 'أعمال مؤطرة',
-    unit: 'مراجعة',
-    lessonTitle: 'مراجعة السكون والخصائص الهندسية',
-    suggestedDuration: 8,
-    targetCompetencies: [
-      'يحل إشكالية في علم السكون',
-      'يحسب الخصائص الهندسية للمقاطع'
-    ],
-    performanceIndicators: [
-      'يحسب محصلة القوى وردود الأفعال',
-      'يحسب مركز الثقل وعزم العطالة لمقاطع مركبة'
-    ]
-  },
-  {
-    id: 'civ_3as_d3_u2',
-    code: 'CIV-3AS-D3-U2',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '3AS',
-    stream: 'تقني رياضي',
-    domain: 'أعمال مؤطرة',
-    unit: 'التجارب الميكانيكية',
-    lessonTitle: 'تجارب الشد، الانضغاط والقص',
-    suggestedDuration: 8,
-    targetCompetencies: [
-      'يحلل نتائج عملية تجريبية',
-      'يستنتج خصائص المواد'
-    ],
-    performanceIndicators: [
-      'يرسم منحنى الشد ويحدد المجاالت',
-      'يستنتج معامل المرونة الطولي'
-    ]
-  },
-  {
-    id: 'civ_3as_d3_u3',
-    code: 'CIV-3AS-D3-U3',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '3AS',
-    stream: 'تقني رياضي',
-    domain: 'أعمال مؤطرة',
-    unit: 'الأنظمة المثلثية',
-    lessonTitle: 'تطبيقات حول الأنظمة المثلثية واستعمال البرمجيات',
-    suggestedDuration: 6,
-    targetCompetencies: [
-      'يطبق طريقة عزل العقد',
-      'يستعمل البرمجيات للتحقق من النتائج'
-    ],
-    performanceIndicators: [
-      'يحسب الجهود الداخلية يدوياً',
-      'يتحقق من صحة النتائج باستخدام MD Solid أو برمجية مشابهة'
-    ]
-  },
-  {
-    id: 'civ_3as_d3_u4',
-    code: 'CIV-3AS-D3-U4',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '3AS',
-    stream: 'تقني رياضي',
-    domain: 'أعمال مؤطرة',
-    unit: 'الرسم المدعم بالحاسوب',
-    lessonTitle: 'رسم مخططات التوزيع والمنشأ العلوي (DAO)',
-    suggestedDuration: 10,
-    targetCompetencies: [
-      'يستغل برمجية الرسم لتمثيل الغماء والمخططات',
-      'يرسم مقاطع عمودية'
-    ],
-    performanceIndicators: [
-      'يمثل الغماء (Toiture) بشكل دقيق',
-      'يرسم مخطط توزيع لطابق أرضي'
-    ]
-  },
-  {
-    id: 'civ_3as_d3_u5',
-    code: 'CIV-3AS-D3-U5',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '3AS',
-    stream: 'تقني رياضي',
-    domain: 'أعمال مؤطرة',
-    unit: 'الانحناء البسيط',
-    lessonTitle: 'تجربة الانحناء البسيط وتطبيقات',
-    suggestedDuration: 6,
-    targetCompetencies: [
-      'يحلل ويستغل نتائج تجربة الانحناء',
-      'يحسب أبعاد رافدة'
-    ],
-    performanceIndicators: [
-      'يفسر منحنى الانحناء',
-      'يستعمل البرمجيات لحساب T و Mf'
-    ]
-  },
-  {
-    id: 'civ_3as_d3_u6',
-    code: 'CIV-3AS-D3-U6',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '3AS',
-    stream: 'تقني رياضي',
-    domain: 'أعمال مؤطرة',
-    unit: 'تطبيقات في الطبوغرافيا',
-    lessonTitle: 'مراقبة المنشآت وحساب المساحات',
-    suggestedDuration: 12,
-    targetCompetencies: [
-      'يطبق طرق حساب المساحات',
-      'ينفذ طرق مراقبة المنشآت'
-    ],
-    performanceIndicators: [
-      'يحسب المساحات بالطرق التحليلية',
-      'يراقب شاقولية وأفقية العناصر في الميدان'
-    ]
-  },
-  {
-    id: 'civ_3as_d3_u7',
-    code: 'CIV-3AS-D3-U7',
-    cycle: 'secondary',
-    subject: 'هندسة مدنية',
-    level: '3AS',
-    stream: 'تقني رياضي',
-    domain: 'أعمال مؤطرة',
-    unit: 'الطرق',
-    lessonTitle: 'رسم المظاهر الطولية والعرضية (DAO)',
-    suggestedDuration: 6,
-    targetCompetencies: [
-      'يتحكم في التمثيل البياني للطرق باستعمال الحاسوب'
-    ],
-    performanceIndicators: [
-      'يرسم المظهر الطولي',
-      'يرسم المظاهر العرضية'
-    ]
-  },
-
-  // --- INFORMATICS 1AS (ARTS/LITERATURE) ---
-  // ... (Existing items kept) ...
   {
     id: 'info_1as_lit_d1_u1',
     code: 'INFO-1AS-LIT-D1-U1',
@@ -1036,7 +1531,6 @@ export const ALGERIAN_CURRICULUM: CurriculumStandard[] = [
       'يذكر أهم الميادين التي استفادت من التطور التكنولوجي'
     ]
   },
-  // ... (Rest of existing items) ...
   {
     id: 'info_1as_lit_d1_u2',
     code: 'INFO-1AS-LIT-D1-U2',
@@ -1365,7 +1859,159 @@ export const ALGERIAN_CURRICULUM: CurriculumStandard[] = [
       'ينشئ حساب بريد إلكتروني',
       'يرسل رسالة إلى زميل مع صورة مرفقة'
     ]
-  }
+  },
+  
+  // --- CIVIL ENGINEERING 1AS (Common Core Science & Technology) ---
+  {
+    id: 'civ_1as_theory_u1',
+    code: 'CIV-1AS-TH-U1',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '1AS',
+    stream: 'جذع مشترك علوم وتكنولوجيا',
+    domain: 'الجزء النظري',
+    unit: 'اإلطالع على ميدان الهندسة المدنية',
+    lessonTitle: 'تعريف وتصنيف منشآت الهندسة المدنية واختيار الأرض',
+    suggestedDuration: 2,
+    targetCompetencies: [
+      'يتعرف على الهندسة المدنية ومكانتها',
+      'يصنف مختلف منشآت الهندسة المدنية',
+      'يتعرف على العوامل المختلفة لاختيار قطعة أرض للبناء'
+    ],
+    performanceIndicators: [
+      'يحدد مكانة الهندسة المدنية',
+      'يصنف المنشآت انطلاقاً من صور (مباني، جسور، طرق...)',
+      'يلخص مراحل الحصول على قطعة أرض',
+      'يناقش العوامل: الموقع، نوعية التربة، التهيئة'
+    ]
+  },
+  {
+    id: 'civ_1as_theory_u2',
+    code: 'CIV-1AS-TH-U2',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '1AS',
+    stream: 'جذع مشترك علوم وتكنولوجيا',
+    domain: 'الجزء النظري',
+    unit: 'رخصة البناء',
+    lessonTitle: 'الملف الإداري والتقني لرخصة البناء',
+    suggestedDuration: 1,
+    targetCompetencies: [
+      'يتعرف على مختلف الوثائق المكونة لملف رخصة البناء',
+      'يدرك أهمية رخصة البناء وطريقة الحصول عليها'
+    ],
+    performanceIndicators: [
+      'يميز بين الوثائق المكتوبة (الطلب، الكشوف، العقد) والوثائق الخطية (المخططات)',
+      'يحدد دور المتدخلين (صاحب المشروع، مكتب الدراسات، البلدية)',
+      'ينجز مخططاً بيانيا لمراحل الحصول على الرخصة'
+    ]
+  },
+  {
+    id: 'civ_1as_theory_u3',
+    code: 'CIV-1AS-TH-U3',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '1AS',
+    stream: 'جذع مشترك علوم وتكنولوجيا',
+    domain: 'الجزء النظري',
+    unit: 'الرسم المدعم بالحاسوب',
+    lessonTitle: 'أساسيات البرنامج وتمثيل المحاور والأعمدة',
+    suggestedDuration: 2,
+    targetCompetencies: [
+      'يكتشف واجهة برنامج الرسم المدعم بالحاسوب',
+      'يستغل البرنامج لتمثيل العناصر البسيطة'
+    ],
+    performanceIndicators: [
+      'يشغل البرنامج ويفتح دورة عمل',
+      'يميز أشرطة الأدوات',
+      'يوظف أوامر الرسم والتغيير لتمثيل المحاور والأعمدة'
+    ]
+  },
+  {
+    id: 'civ_1as_theory_u4',
+    code: 'CIV-1AS-TH-U4',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '1AS',
+    stream: 'جذع مشترك علوم وتكنولوجيا',
+    domain: 'الجزء النظري',
+    unit: 'الرسم المدعم بالحاسوب',
+    lessonTitle: 'تمثيل الجدران والفتحات (أبواب ونوافذ)',
+    suggestedDuration: 2,
+    targetCompetencies: [
+      'يتعرف على الجدران وأنواعها',
+      'يتعرف على الفتحات وأدوارها',
+      'يستغل البرنامج لتمثيل الجدران والفتحات'
+    ],
+    performanceIndicators: [
+      'يستخلص أدوار الجدران (الرئيسية والثانوية)',
+      'يستخدم أوامر الرسم (Ligne, Arc) والتعديل لرسم الجدران والفتحات بدقة'
+    ]
+  },
+  {
+    id: 'civ_1as_prac_u1',
+    code: 'CIV-1AS-PR-U1',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '1AS',
+    stream: 'جذع مشترك علوم وتكنولوجيا',
+    domain: 'الجزء التطبيقي',
+    unit: 'مخطط التوزيع',
+    lessonTitle: 'اقتراح مخطط توزيع واستغلال قطعة أرض',
+    suggestedDuration: 2,
+    targetCompetencies: [
+      'يستغل قطعة أرض للبناء',
+      'يقترح مخطط توزيع يحترم المعايير'
+    ],
+    performanceIndicators: [
+      'يقرأ مخطط الكتلة',
+      'يناقش مواصفات المشروع (الواجهات، المحيط)',
+      'يشرح ويبرر المخطط المقترح'
+    ]
+  },
+  {
+    id: 'civ_1as_prac_u2',
+    code: 'CIV-1AS-PR-U2',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '1AS',
+    stream: 'جذع مشترك علوم وتكنولوجيا',
+    domain: 'الجزء التطبيقي',
+    unit: 'مخطط التوزيع',
+    lessonTitle: 'رسم المحاور، الأعمدة والجدران (DAO)',
+    suggestedDuration: 4,
+    targetCompetencies: [
+      'يرسم المحاور والأعمدة والجدران بدقة باستعمال الحاسوب'
+    ],
+    performanceIndicators: [
+      'يستحدث منسوخات (Calques) بخصائص مختلفة (لون، سمك)',
+      'يطبق أوامر (Ligne, Polyligne, Décaler, Ajuster, Copier)',
+      'يستخدم تعليمة Accrochage للتدقيق'
+    ]
+  },
+  {
+    id: 'civ_1as_prac_u3',
+    code: 'CIV-1AS-PR-U3',
+    cycle: 'secondary',
+    subject: 'هندسة مدنية',
+    level: '1AS',
+    stream: 'جذع مشترك علوم وتكنولوجيا',
+    domain: 'الجزء التطبيقي',
+    unit: 'مخطط التوزيع',
+    lessonTitle: 'رسم الأبواب والنوافذ والإنهاء (DAO)',
+    suggestedDuration: 2,
+    targetCompetencies: [
+      'يكمل رسم المخطط بتمثيل الفتحات'
+    ],
+    performanceIndicators: [
+      'يستحدث منسوخ الفتحات',
+      'يرسم الرموز الاصطلاحية للأبواب والنوافذ',
+      'يحفظ ملف الرسم النهائي'
+    ]
+  },
+
+  // --- CIVIL ENGINEERING 2AS & 3AS (Placeholder for existing content if any) ---
+  // ... (Existing CE content preserved) ...
 ];
 
 export const LESSON_TEMPLATES: Record<LessonType, { flow: string; activities: string }> = {
